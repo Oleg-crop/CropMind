@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CropMind — Plant Intelligence</title>
+
+  <style> { box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #07130d;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    header {
+      padding: 24px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: #72c66b;
+    }
+
+    nav a {
+      color: #b9c7bd;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      min-height: 80vh;
+      padding: 100px 7%;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(71,150,72,0.18), transparent 35%),
+        radial-gradient(circle at 20% 80%, rgba(42,104,62,0.14), transparent 30%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #8bd884;
+      border: 1px solid rgba(139,216,132,0.3);
+      padding: 8px 14px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(52px, 8vw, 105px);
+      line-height: 0.95;
+      letter-spacing: -5px;
+      margin-bottom: 30px;
+    }
+
+    h1 span {
+      color: #72c66b;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #aebbb2;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #72c66b;
+      color: #07130d;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button:hover {
+      background: #91dc89;
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .section-text {
+      color: #9eaaa2;
+      max-width: 650px;
+      margin-bottom: 45px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 30px;
+      min-height: 210px;
+      background: #0d1d14;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(114,198,107,0.4);
+    }
+
+    .icon {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #929e96;
+      font-size: 15px;
+    }
+
+    .quote {
+      margin-top: 50px;
+      padding: 45px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #10291a, #0b1911);
+      border: 1px solid rgba(114,198,107,0.15);
+    }
+
+    .quote p {
+      font-size: 28px;
+      max-width: 850px;
+    }
+
+    footer {
+      padding: 35px 7%;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #758078;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Crop<span>Mind</span></div>
+
+    <nav>
+      <a href="#about">Про нас</a>
+      <a href="#solutions">Рішення</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+
+        <div class="tag">PLANT INTELLIGENCE</div>
+
+        <h1>
+          Розуміти<br>
+          <span>рослину.</span>
+        </h1>
+
+        <p>
+          CropMind — цифрова система для агрономії,
+          яка поєднує дані, агрохімію, моніторинг
+          та практичні рішення для рослинництва.
+        </p>
+
+        <a href="#solutions" class="button">
+          Дослідити CropMind →
+        </a>
+
+      </div>
+    </section>
+
+
+    <section id="about">
+
+      <h2 class="section-title">Від даних до рішення.</h2>
+
+      <p class="section-text">
+        Ми будуємо інструмент, який допомагає агроному
+        бачити не просто поле, а всю систему,
+        що формує врожай.
+      </p>
+
+    </section>
+
+
+    <section id="solutions">
+
+      <h2 class="section-title">Система CropMind</h2>
+
+      <p class="section-text">
+        Основні напрямки майбутньої платформи.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🌱</div>
+          <h3>Моніторинг посівів</h3>
+          <p>
+            Оцінка стану рослин, фаз розвитку,
+            проблем та потенціалу врожаю.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🧪</div>
+          <h3>Агрохімія</h3>
+          <p>
+            Живлення рослин, аналіз ґрунту,
+            елементи живлення та рекомендації.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Аналітика</h3>
+          <p>
+            Дані польових дослідів, урожайність,
+            порівняння технологій та економіка.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🛰️</div>
+          <h3>Дистанційний моніторинг</h3>
+          <p>
+            Супутникові та дрон-дані для контролю
+            стану посівів.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🧠</div>
+          <h3>Plant Intelligence</h3>
+          <p>
+            Перетворення великої кількості даних
+            на зрозумілі агрономічні рішення.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🇺🇦</div>
+          <h3>Українська агрономія</h3>
+          <p>
+            Практичні знання та дані,
+            адаптовані до умов українських полів.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="quote">
+        <p>
+          «Не просто вирощувати рослину.
+          Розуміти, чому вона росте саме так.»
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer id="contact">
+    <div>© 2026 CropMind</div>
+    <div>Plant Intelligence</div>
+  </footer>
+
+</body>
+</html>
