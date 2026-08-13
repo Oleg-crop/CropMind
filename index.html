@@ -7,179 +7,305 @@
 <title>SIVORA — From Knowledge to Harvest</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f2e9;
-    color: #183426;
-    line-height: 1.6;
+body{
+    font-family:Arial, sans-serif;
+    background:#f5f7f2;
+    color:#183426;
+    line-height:1.6;
 }
 
-header {
-    background: #183426;
-    color: #f5f2e9;
-    padding: 22px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+header{
+    background:#183426;
+    color:white;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
-.logo {
-    font-size: 28px;
-    letter-spacing: 7px;
-    font-weight: 500;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-nav a {
-    color: #f5f2e9;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 15px;
+.logo-mark{
+    width:42px;
+    height:42px;
+    border:2px solid #d8c98b;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
 }
 
-.hero {
-    min-height: 82vh;
-    display: flex;
-    align-items: center;
-    padding: 70px 8%;
-    background:
-        linear-gradient(rgba(245,242,233,0.88), rgba(245,242,233,0.94));
+.logo h1{
+    font-size:25px;
+    letter-spacing:3px;
 }
 
-.hero-content {
-    max-width: 850px;
+.logo span{
+    display:block;
+    font-size:10px;
+    color:#d8c98b;
+    letter-spacing:2px;
 }
 
-.hero h1 {
-    font-size: clamp(55px, 10vw, 110px);
-    letter-spacing: 15px;
-    font-weight: 400;
-    margin-bottom: 10px;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:14px;
 }
 
-.hero h2 {
-    font-size: 25px;
-    font-weight: 400;
-    margin-bottom: 20px;
+.hero{
+    background:linear-gradient(135deg,#183426,#294f3a);
+    color:white;
+    padding:90px 7%;
+    text-align:center;
 }
 
-.hero p {
-    max-width: 650px;
-    font-size: 19px;
-    color: #536358;
-    margin-bottom: 35px;
+.hero .symbol{
+    width:90px;
+    height:90px;
+    border:2px solid #d8c98b;
+    border-radius:50%;
+    margin:0 auto 25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    color:#d8c98b;
 }
 
-.button {
-    display: inline-block;
-    background: #183426;
-    color: white;
-    padding: 14px 27px;
-    text-decoration: none;
-    border-radius: 3px;
-    margin-right: 10px;
+.hero h2{
+    font-size:48px;
+    letter-spacing:5px;
+    margin-bottom:12px;
 }
 
-.button.light {
-    background: transparent;
-    color: #183426;
-    border: 1px solid #183426;
+.hero h3{
+    color:#d8c98b;
+    font-weight:normal;
+    font-size:19px;
+    margin-bottom:20px;
 }
 
-section {
-    padding: 80px 8%;
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#e7eee8;
+    font-size:17px;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 38px;
-    font-weight: 400;
-    margin-bottom: 50px;
+.buttons{
+    margin-top:30px;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 22px;
+.button{
+    display:inline-block;
+    padding:13px 25px;
+    margin:6px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
-.card {
-    background: white;
-    padding: 32px;
-    border: 1px solid #ddd8c9;
-    transition: 0.2s;
+.primary{
+    background:#d8c98b;
+    color:#183426;
 }
 
-.card:hover {
-    transform: translateY(-4px);
+.secondary{
+    border:1px solid #d8c98b;
+    color:white;
 }
 
-.icon {
-    font-size: 35px;
-    margin-bottom: 18px;
+section{
+    padding:70px 7%;
 }
 
-.card h3 {
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 10px;
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-.card p {
-    color: #667269;
+.section-title h2{
+    font-size:32px;
 }
 
-.about {
-    background: #183426;
-    color: #f5f2e9;
-    text-align: center;
+.section-title p{
+    color:#68766c;
+    margin-top:8px;
 }
 
-.about p {
-    max-width: 750px;
-    margin: auto;
-    font-size: 20px;
-    color: #d7ddd5;
+.cards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+    max-width:1000px;
+    margin:auto;
 }
 
-.slogan {
-    margin-top: 35px;
-    font-size: 27px;
-    letter-spacing: 2px;
+.card{
+    background:white;
+    border-radius:12px;
+    padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.06);
+    border:1px solid #e1e6df;
+    transition:0.2s;
 }
 
-footer {
-    background: #10251b;
-    color: #bfc9c1;
-    padding: 35px 8%;
-    text-align: center;
+.card:hover{
+    transform:translateY(-4px);
 }
 
-@media(max-width: 700px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
+.card .icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#617067;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:18px;
+    color:#183426;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.about{
+    background:#e9eee7;
+}
+
+.about-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-box p{
+    margin-top:15px;
+    color:#536158;
+    font-size:17px;
+}
+
+.services{
+    background:white;
+}
+
+.service-list{
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service{
+    padding:22px;
+    border:1px solid #dfe5dd;
+    border-radius:10px;
+    background:#fafbf9;
+}
+
+.service h3{
+    margin-bottom:8px;
+}
+
+.service p{
+    color:#68756d;
+    font-size:14px;
+}
+
+.quote{
+    background:#183426;
+    color:white;
+    text-align:center;
+    padding:70px 7%;
+}
+
+.quote p{
+    font-size:27px;
+    max-width:800px;
+    margin:auto;
+    font-style:italic;
+}
+
+.quote span{
+    display:block;
+    margin-top:18px;
+    color:#d8c98b;
+}
+
+footer{
+    background:#10261b;
+    color:#cbd5ce;
+    text-align:center;
+    padding:35px 7%;
+}
+
+footer .brand{
+    color:white;
+    font-size:22px;
+    letter-spacing:3px;
+    margin-bottom:8px;
+}
+
+footer p{
+    font-size:13px;
+}
+
+@media(max-width:700px){
+
+    header{
+        padding:16px 5%;
     }
 
-    nav a {
-        margin: 0 7px;
-        font-size: 13px;
+    nav{
+        display:none;
     }
 
-    .hero h1 {
-        letter-spacing: 8px;
+    .hero{
+        padding:65px 5%;
     }
 
-    .hero {
-        min-height: 75vh;
+    .hero h2{
+        font-size:38px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .service-list{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:55px 5%;
+    }
+
+    .quote p{
+        font-size:21px;
     }
 }
 </style>
@@ -188,178 +314,142 @@ footer {
 <body>
 
 <header>
-    <div class="logo">SIVORA</div>
 
-    <nav>
-        <a href="#student">Студенту</a>
-        <a href="#farmer">Фермеру</a>
-        <a href="#research">Досліди</a>
-        <a href="#services">Послуги</a>
-    </nav>
+<div class="logo">
+    <div class="logo-mark">✦</div>
+    <div>
+        <h1>SIVORA</h1>
+        <span>KNOWLEDGE • FIELD • HARVEST</span>
+    </div>
+</div>
+
+<nav>
+    <a href="#farmer">Фермеру</a>
+    <a href="#student">Студенту</a>
+    <a href="#research">Досліди</a>
+    <a href="#services">Послуги</a>
+</nav>
+
 </header>
 
+
 <section class="hero">
-    <div class="hero-content">
 
-        <h1>SIVORA</h1>
+<div class="symbol">✦</div>
 
-        <h2>FROM KNOWLEDGE TO HARVEST.</h2>
+<h2>SIVORA</h2>
 
-        <p>
-            Від знання — до врожаю.
-            Освітня та практична платформа для студентів,
-            агрономів і фермерів.
-        </p>
+<h3>From Knowledge to Harvest</h3>
 
-        <a href="#student" class="button">Студенту</a>
-        <a href="#farmer" class="button light">Фермеру</a>
+<p>
+Платформа про агрономію, рослинництво та практичні знання.
+Для тих, хто навчається. Для тих, хто вирощує.
+Для тих, хто хоче розуміти поле глибше.
+</p>
 
-    </div>
-</section>
-
-<section id="student">
-
-    <h2 class="section-title">Для студента</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">🎓</div>
-            <h3>Практики</h3>
-            <p>
-                Щоденники, звіти та матеріали
-                для проходження навчальної практики.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">📚</div>
-            <h3>Курсові та реферати</h3>
-            <p>
-                Підготовка навчальних матеріалів,
-                оформлення та допомога з дослідженнями.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">📊</div>
-            <h3>Презентації</h3>
-            <p>
-                Професійні презентації для навчання,
-                захисту робіт та виступів.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">💬</div>
-            <h3>Консультації</h3>
-            <p>
-                Допомога з агрономією, технологіями
-                вирощування та навчальними завданнями.
-            </p>
-        </div>
-
-    </div>
+<div class="buttons">
+    <a href="#farmer" class="button primary">Я фермер</a>
+    <a href="#student" class="button secondary">Я студент</a>
+</div>
 
 </section>
+
 
 <section id="farmer">
 
-    <h2 class="section-title">Для фермера</h2>
+<div class="section-title">
+    <h2>🌱 Фермеру</h2>
+    <p>Практичні рішення для реального поля</p>
+</div>
 
-    <div class="cards">
+<div class="cards">
 
-        <div class="card">
-            <div class="icon">🌱</div>
-            <h3>Технології вирощування</h3>
-            <p>
-                Практичні технологічні рішення
-                для основних сільськогосподарських культур.
-            </p>
-        </div>
+<div class="card">
+    <div class="icon">🌾</div>
+    <h3>Технології вирощування</h3>
+    <p>
+    Технології вирощування культур, системи живлення,
+    захист рослин, строки та норми внесення.
+    </p>
+    <a href="#">Детальніше →</a>
+</div>
 
-        <div class="card">
-            <div class="icon">🧪</div>
-            <h3>Мінеральне живлення</h3>
-            <p>
-                Добрива, мікроелементи,
-                розрахунки та системи живлення рослин.
-            </p>
-        </div>
+<div class="card">
+    <div class="icon">🧪</div>
+    <h3>Агрономічні консультації</h3>
+    <p>
+    Розбір проблем поля, живлення рослин,
+    шкідників, хвороб, бур'янів та технологічних рішень.
+    </p>
+    <a href="#">Замовити консультацію →</a>
+</div>
 
-        <div class="card">
-            <div class="icon">🚜</div>
-            <h3>Захист рослин</h3>
-            <p>
-                Гербіциди, фунгіциди, інсектициди
-                та практичні системи захисту.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">💡</div>
-            <h3>Агрономічні консультації</h3>
-            <p>
-                Допомога у прийнятті рішень
-                безпосередньо під конкретне поле.
-            </p>
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-<section id="research">
 
-    <h2 class="section-title">Досліди та знання</h2>
+<section id="student">
 
-    <div class="cards">
+<div class="section-title">
+    <h2>🎓 Студенту</h2>
+    <p>Від навчального матеріалу до розуміння агрономії</p>
+</div>
 
-        <div class="card">
-            <div class="icon">🔬</div>
-            <h3>Польові досліди</h3>
-            <p>
-                Реальні спостереження,
-                порівняння технологій та результати.
-            </p>
-        </div>
+<div class="cards">
 
-        <div class="card">
-            <div class="icon">📈</div>
-            <h3>Результати</h3>
-            <p>
-                Урожайність, економічна ефективність
-                та практичні висновки.
-            </p>
-        </div>
+<div class="card">
+    <div class="icon">📚</div>
+    <h3>Навчальні матеріали</h3>
+    <p>
+    Реферати, методичні матеріали, конспекти,
+    приклади та матеріали для підготовки.
+    </p>
+    <a href="#">Перейти до матеріалів →</a>
+</div>
 
-        <div class="card">
-            <div class="icon">📰</div>
-            <h3>Аграрні новини</h3>
-            <p>
-                Нові технології, спостереження
-                та актуальні події аграрного сектору.
-            </p>
-        </div>
+<div class="card">
+    <div class="icon">📝</div>
+    <h3>Навчальні роботи</h3>
+    <p>
+    Допомога з підготовкою та оформленням практик,
+    курсових, рефератів і презентацій.
+    </p>
+    <a href="#services">Послуги та ціни →</a>
+</div>
 
-    </div>
+</div>
 
 </section>
 
-<section id="services">
 
-    <h2 class="section-title">Послуги</h2>
+<section id="research" class="about">
 
-    <div class="cards">
+<div class="section-title">
+    <h2>🔬 Досліди та новини</h2>
+    <p>Не теорія заради теорії — а спостереження, цифри та результат</p>
+</div>
 
-        <div class="card">
-            <h3>Навчальні роботи</h3>
-            <p>
-                Практики, реферати, курсові,
-                презентації та інші навчальні матеріали.
-            </p>
-        </div>
+<div class="about-box">
 
-        <div class="card">
-            <h3>Агрономічні консультації</h3>
-            <p>
+<p>
+Тут будуть публікуватися польові спостереження,
+агрономічні експерименти, результати випробувань,
+аналіз урожайності, живлення рослин та технологій.
+</p>
+
+<p>
+SIVORA — це місце, де знання перевіряються практикою.
+</p>
+
+</div>
+
+</section>
+
+
+<section id="services" class="services">
+
+<div class="section-title">
+    <h2>💼 Послуги</h2>
+    <p>Професійна допомога та навчальні матеріали</p>
+</di
