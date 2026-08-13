@@ -7,10 +7,19 @@
 <title>SIVORA — From Knowledge to Harvest</title>
 
 <style>
+
+/* =========================
+   ОСНОВНІ НАЛАШТУВАННЯ
+========================= */
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -20,16 +29,25 @@ body{
     line-height:1.6;
 }
 
+a{
+    text-decoration:none;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 header{
     background:#183426;
     color:white;
-    padding:22px 7%;
+    padding:18px 7%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     position:sticky;
     top:0;
-    z-index:10;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,0.15);
 }
 
 .logo{
@@ -39,14 +57,15 @@ header{
 }
 
 .logo-mark{
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
     border:2px solid #d8c98b;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:20px;
+    color:#d8c98b;
+    font-size:21px;
 }
 
 .logo h1{
@@ -56,69 +75,98 @@ header{
 
 .logo span{
     display:block;
-    font-size:10px;
+    font-size:9px;
     color:#d8c98b;
     letter-spacing:2px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
-    font-size:14px;
+nav{
+    display:flex;
+    align-items:center;
 }
 
-.hero{
-    background:linear-gradient(135deg,#183426,#294f3a);
+nav a{
     color:white;
-    padding:90px 7%;
+    margin-left:22px;
+    font-size:14px;
+    transition:0.2s;
+}
+
+nav a:hover{
+    color:#d8c98b;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:650px;
+    background:
+        linear-gradient(
+            rgba(24,52,38,0.90),
+            rgba(24,52,38,0.94)
+        );
+    color:white;
+    padding:100px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     text-align:center;
 }
 
+.hero-content{
+    max-width:850px;
+}
+
 .hero .symbol{
-    width:90px;
-    height:90px;
+    width:100px;
+    height:100px;
     border:2px solid #d8c98b;
     border-radius:50%;
     margin:0 auto 25px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:42px;
+    font-size:45px;
     color:#d8c98b;
 }
 
 .hero h2{
-    font-size:48px;
-    letter-spacing:5px;
-    margin-bottom:12px;
+    font-size:60px;
+    letter-spacing:8px;
+    margin-bottom:8px;
 }
 
 .hero h3{
     color:#d8c98b;
     font-weight:normal;
-    font-size:19px;
-    margin-bottom:20px;
+    font-size:20px;
+    margin-bottom:22px;
 }
 
 .hero p{
-    max-width:700px;
+    max-width:720px;
     margin:auto;
     color:#e7eee8;
-    font-size:17px;
+    font-size:18px;
 }
 
 .buttons{
-    margin-top:30px;
+    margin-top:32px;
 }
 
 .button{
     display:inline-block;
-    padding:13px 25px;
+    padding:14px 28px;
     margin:6px;
-    border-radius:6px;
-    text-decoration:none;
+    border-radius:7px;
     font-weight:bold;
+    transition:0.2s;
+}
+
+.button:hover{
+    transform:translateY(-2px);
 }
 
 .primary{
@@ -131,17 +179,21 @@ nav a{
     color:white;
 }
 
+/* =========================
+   SECTIONS
+========================= */
+
 section{
-    padding:70px 7%;
+    padding:80px 7%;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:40px;
+    margin-bottom:45px;
 }
 
 .section-title h2{
-    font-size:32px;
+    font-size:34px;
 }
 
 .section-title p{
@@ -149,29 +201,34 @@ section{
     margin-top:8px;
 }
 
+/* =========================
+   CARDS
+========================= */
+
 .cards{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:22px;
-    max-width:1000px;
+    gap:24px;
+    max-width:1050px;
     margin:auto;
 }
 
 .card{
     background:white;
-    border-radius:12px;
-    padding:30px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.06);
+    border-radius:14px;
+    padding:32px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.06);
     border:1px solid #e1e6df;
-    transition:0.2s;
+    transition:0.25s;
 }
 
 .card:hover{
-    transform:translateY(-4px);
+    transform:translateY(-5px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.09);
 }
 
 .card .icon{
-    font-size:35px;
+    font-size:38px;
     margin-bottom:15px;
 }
 
@@ -189,8 +246,11 @@ section{
     margin-top:18px;
     color:#183426;
     font-weight:bold;
-    text-decoration:none;
 }
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
     background:#e9eee7;
@@ -208,27 +268,37 @@ section{
     font-size:17px;
 }
 
+/* =========================
+   SERVICES
+========================= */
+
 .services{
     background:white;
 }
 
 .service-list{
-    max-width:900px;
+    max-width:1050px;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    gap:20px;
 }
 
 .service{
-    padding:22px;
+    padding:25px;
     border:1px solid #dfe5dd;
-    border-radius:10px;
+    border-radius:12px;
     background:#fafbf9;
+    transition:0.2s;
+}
+
+.service:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
 }
 
 .service h3{
-    margin-bottom:8px;
+    margin-bottom:9px;
 }
 
 .service p{
@@ -236,16 +306,115 @@ section{
     font-size:14px;
 }
 
+.service a{
+    display:inline-block;
+    margin-top:15px;
+    color:#183426;
+    font-weight:bold;
+}
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.07);
+}
+
+.calculator h3{
+    font-size:25px;
+    margin-bottom:22px;
+}
+
+.calculator label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+.calculator input,
+.calculator select{
+    width:100%;
+    padding:13px;
+    border:1px solid #d6ded7;
+    border-radius:7px;
+    font-size:16px;
+    background:white;
+}
+
+.calc-button{
+    width:100%;
+    padding:14px;
+    margin-top:22px;
+    border:0;
+    border-radius:7px;
+    background:#183426;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.calc-button:hover{
+    background:#294f3a;
+}
+
+.result{
+    margin-top:22px;
+    padding:18px;
+    border-radius:9px;
+    background:#e9eee7;
+    display:none;
+}
+
+/* =========================
+   RESEARCH
+========================= */
+
+.research-card{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.research-item{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    border:1px solid #e1e6df;
+}
+
+.research-item h3{
+    margin-bottom:10px;
+}
+
+.research-item p{
+    color:#68756d;
+    font-size:14px;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
 .quote{
     background:#183426;
     color:white;
     text-align:center;
-    padding:70px 7%;
+    padding:85px 7%;
 }
 
 .quote p{
-    font-size:27px;
-    max-width:800px;
+    font-size:28px;
+    max-width:850px;
     margin:auto;
     font-style:italic;
 }
@@ -256,413 +425,48 @@ section{
     color:#d8c98b;
 }
 
-footer{
-    background:#10261b;
-    color:#cbd5ce;
-    text-align:center;
-    padding:35px 7%;
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#f5f7f2;
 }
 
-footer .brand{
-    color:white;
-    font-size:22px;
-    letter-spacing:3px;
-    margin-bottom:8px;
-}
-
-footer p{
-    font-size:13px;
-}
-
-@media(max-width:700px){
-
-    header{
-        padding:16px 5%;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        padding:65px 5%;
-    }
-
-    .hero h2{
-        font-size:38px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-    .service-list{
-        grid-template-columns:1fr;
-    }
-
-    section{
-        padding:55px 5%;
-    }
-
-    .quote p{
-        font-size:21px;
-    }
-}
-</style>
-</head>
-
-<body>
-<script>
-
-function calculateSeeds(){
-
-    const seedRate = parseFloat(
-        document.getElementById("seedRate").value
-    );
-
-    const rowSpacing = parseFloat(
-        document.getElementById("rowSpacing").value
-    );
-
-    const result = document.getElementById("result");
-
-    if(
-        isNaN(seedRate) ||
-        isNaN(rowSpacing) ||
-        seedRate <= 0 ||
-        rowSpacing <= 0
-    ){
-        result.style.display = "block";
-        result.innerHTML = "⚠️ Введи коректні значення.";
-        return;
-    }
-
-    // млн насінин/га → насінин/м²
-    const seedsPerM2 = seedRate * 1000000 / 10000;
-
-    // насінин на погонний метр рядка
-    const seedsPerMeter =
-        seedsPerM2 * (rowSpacing / 100);
-
-    result.style.display = "block";
-
-    result.innerHTML = `
-        <strong>Результат:</strong><br><br>
-        🌱 Насінин на 1 м рядка:
-        <strong>${seedsPerMeter.toFixed(2)}</strong><br>
-        📐 Насінин на 1 м²:
-        <strong>${seedsPerM2.toFixed(2)}</strong>
-    `;
-}
-
-</script>
-<header>
-
-<div class="logo">
-    <div class="logo-mark">✦</div>
-    <div>
-        <h1>SIVORA</h1>
-        <span>KNOWLEDGE • FIELD • HARVEST</span>
-    </div>
-</div>
-
-<nav>
-    <a href="#farmer">Фермеру</a>
-    <a href="#student">Студенту</a>
-    <a href="#research">Досліди</a>
-    <a href="#services">Послуги</a>
-</nav>
-
-</header>
-
-
-<section class="hero">
-
-<div class="symbol">✦</div>
-
-<h2>SIVORA</h2>
-
-<h3>From Knowledge to Harvest</h3>
-
-<p>
-Платформа про агрономію, рослинництво та практичні знання.
-Для тих, хто навчається. Для тих, хто вирощує.
-Для тих, хто хоче розуміти поле глибше.
-</p>
-
-<div class="buttons">
-    <a href="#farmer" class="button primary">Я фермер</a>
-    <a href="#student" class="button secondary">Я студент</a>
-</div>
-
-</section>
-
-
-<section id="farmer">
-
-<div class="section-title">
-    <h2>🌱 Фермеру</h2>
-    <p>Практичні рішення для реального поля</p>
-</div>
-
-<div class="cards">
-
-<div class="card">
-    <div class="icon">🌾</div>
-    <h3>Технології вирощування</h3>
-    <p>
-    Технології вирощування культур, системи живлення,
-    захист рослин, строки та норми внесення.
-    </p>
-    <a href="#">Детальніше →</a>
-</div>
-
-<div class="card">
-    <div class="icon">🧪</div>
-    <h3>Агрономічні консультації</h3>
-    <p>
-    Розбір проблем поля, живлення рослин,
-    шкідників, хвороб, бур'янів та технологічних рішень.
-    </p>
-    <a href="#">Замовити консультацію →</a>
-</div>
-
-</div>
-
-</section>
-<section id="calculator" class="about">
-
-<div class="section-title">
-    <h2>🧮 Агрономічний калькулятор</h2>
-    <p>Швидкі розрахунки для практичного поля</p>
-</div>
-
-<div class="cards">
-
-    <div class="card">
-        <div class="icon">🌱</div>
-        <h3>Норма висіву</h3>
-        <p>
-        Розрахунок кількості насінин на метр,
-        гектар та необхідної маси насіння.
-        </p>
-        <a href="#calculator-form">Розрахувати →</a>
-    </div>
-
-    <div class="card">
-        <div class="icon">🧪</div>
-        <h3>Мінеральне живлення</h3>
-        <p>
-        Розрахунок діючої речовини,
-        фізичної норми добрива та кількості елементів.
-        </p>
-        <a href="#calculator-form">Розрахувати →</a>
-    </div>
-
-</div>
-
-<div id="calculator-form" style="
-    max-width:700px;
-    margin:40px auto 0;
+.contact-box{
+    max-width:650px;
+    margin:auto;
     background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.06);
-">
+    padding:35px;
+    border-radius:14px;
+    box-shadow:0 5px 25px rgba(0,0,0,0.06);
+}
 
-    <h3 style="margin-bottom:20px;">
-        Розрахунок норми висіву
-    </h3>
+.contact-box input,
+.contact-box textarea{
+    width:100%;
+    padding:13px;
+    margin-top:7px;
+    margin-bottom:15px;
+    border:1px solid #d6ded7;
+    border-radius:7px;
+    font-family:Arial,sans-serif;
+}
 
-    <label>Норма, млн насінин/га</label>
+.contact-box textarea{
+    min-height:130px;
+    resize:vertical;
+}
 
-    <input
-        id="seedRate"
-        type="number"
-        step="0.01"
-        placeholder="Наприклад: 0.4"
-        style="
-            width:100%;
-            padding:13px;
-            margin:8px 0 15px;
-            border:1px solid #dfe5dd;
-            border-radius:6px;
-        "
-    >
+.contact-button{
+    width:100%;
+    padding:14px;
+    border:0;
+    border-radius:7px;
+    background:#183426;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
 
-    <label>Міжряддя, см</label>
-
-    <input
-        id="rowSpacing"
-        type="number"
-        placeholder="Наприклад: 45"
-        style="
-            width:100%;
-            padding:13px;
-            margin:8px 0 15px;
-            border:1px solid #dfe5dd;
-            border-radius:6px;
-        "
-    >
-
-    <button
-        onclick="calculateSeeds()"
-        style="
-            width:100%;
-            padding:14px;
-            border:0;
-            border-radius:6px;
-            background:#183426;
-            color:white;
-            font-weight:bold;
-            font-size:16px;
-            cursor:pointer;
-        "
-    >
-        Розрахувати
-    </button>
-
-    <div
-        id="result"
-        style="
-            margin-top:20px;
-            padding:15px;
-            background:#e9eee7;
-            border-radius:8px;
-            display:none;
-        "
-    ></div>
-
-</div>
-
-</section>
-
-<section id="student">
-
-<div class="section-title">
-    <h2>🎓 Студенту</h2>
-    <p>Від навчального матеріалу до розуміння агрономії</p>
-</div>
-
-<div class="cards">
-
-<div class="card">
-    <div class="icon">📚</div>
-    <h3>Навчальні матеріали</h3>
-    <p>
-    Реферати, методичні матеріали, конспекти,
-    приклади та матеріали для підготовки.
-    </p>
-    <a href="#">Перейти до матеріалів →</a>
-</div>
-
-<div class="card">
-    <div class="icon">📝</div>
-    <h3>Навчальні роботи</h3>
-    <p>
-    Допомога з підготовкою та оформленням практик,
-    курсових, рефератів і презентацій.
-    </p>
-    <a href="#services">Послуги та ціни →</a>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="research" class="about">
-
-<div class="section-title">
-    <h2>🔬 Досліди та новини</h2>
-    <p>Не теорія заради теорії — а спостереження, цифри та результат</p>
-</div>
-
-<div class="about-box">
-
-<p>
-Тут будуть публікуватися польові спостереження,
-агрономічні експерименти, результати випробувань,
-аналіз урожайності, живлення рослин та технологій.
-</p>
-
-<p>
-SIVORA — це місце, де знання перевіряються практикою.
-</p>
-
-</div>
-
-</section>
-
-
-<section id="services" class="services">
-
-<div class="section-title">
-    <h2>💼 Послуги</h2>
-    <p>Професійна допомога та навчальні матеріали</p>
-<div class="service-list">
-
-    <div class="service">
-        <h3>🌱 Консультація агронома</h3>
-        <p>
-        Аналіз проблеми поля, живлення, захисту рослин,
-        технології вирощування та пошук практичного рішення.
-        </p>
-        <a href="#contact">Замовити →</a>
-    </div>
-
-    <div class="service">
-        <h3>🧪 Аналіз агрономічної ситуації</h3>
-        <p>
-        Розбір аналізів ґрунту, результатів дослідів,
-        симптомів дефіциту елементів та стану рослин.
-        </p>
-        <a href="#contact">Замовити →</a>
-    </div>
-
-    <div class="service">
-        <h3>📚 Навчальні матеріали</h3>
-        <p>
-        Конспекти, практичні матеріали, таблиці,
-        розрахунки та пояснення складних агрономічних тем.
-        </p>
-        <a href="#student">Переглянути →</a>
-    </div>
-
-</div>
-
-</section>
-
-
-<section id="contact" class="quote">
-
-    <p>
-        «Сильний урожай починається не з комбайна.
-        Він починається з правильного рішення.»
-    </p>
-
-    <span>— SIVORA</span>
-
-</section>
-
-
-<footer>
-
-    <div class="brand">SIVORA</div>
-
-    <p>
-        From Knowledge to Harvest
-    </p>
-
-    <p style="margin-top:10px;">
-        Агрономія • Практика • Дослідження • Освіта
-    </p>
-
-    <p style="margin-top:20px;">
-        © 2026 SIVORA. Усі права захищені.
-    </p>
-
-</footer>
-
-</body>
-</html>
+/* ======
