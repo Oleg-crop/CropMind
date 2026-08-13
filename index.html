@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SIVORA — From Knowledge to Harvest</title>
 
 <style>
-
-/* =========================
-   ОСНОВНІ НАЛАШТУВАННЯ
-========================= */
 
 *{
     box-sizing:border-box;
@@ -24,18 +21,10 @@ html{
 
 body{
     font-family:Arial, sans-serif;
-    background:#f5f7f2;
+    background:#f4f7f2;
     color:#183426;
     line-height:1.6;
 }
-
-a{
-    text-decoration:none;
-}
-
-/* =========================
-   HEADER
-========================= */
 
 header{
     background:#183426;
@@ -46,8 +35,8 @@ header{
     align-items:center;
     position:sticky;
     top:0;
-    z-index:1000;
-    box-shadow:0 3px 15px rgba(0,0,0,0.15);
+    z-index:100;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
 .logo{
@@ -62,72 +51,50 @@ header{
     border:2px solid #d8c98b;
     border-radius:50%;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     color:#d8c98b;
-    font-size:21px;
+    font-size:22px;
 }
 
 .logo h1{
     font-size:25px;
-    letter-spacing:3px;
+    letter-spacing:4px;
 }
 
 .logo span{
-    display:block;
     font-size:9px;
     color:#d8c98b;
     letter-spacing:2px;
 }
 
-nav{
-    display:flex;
-    align-items:center;
-}
-
 nav a{
     color:white;
-    margin-left:22px;
+    text-decoration:none;
+    margin-left:20px;
     font-size:14px;
-    transition:0.2s;
 }
 
 nav a:hover{
     color:#d8c98b;
 }
 
-/* =========================
-   HERO
-========================= */
-
 .hero{
-    min-height:650px;
-    background:
-        linear-gradient(
-            rgba(24,52,38,0.90),
-            rgba(24,52,38,0.94)
-        );
+    background:linear-gradient(135deg,#183426,#315740);
     color:white;
-    padding:100px 7%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
     text-align:center;
+    padding:100px 7%;
 }
 
-.hero-content{
-    max-width:850px;
-}
-
-.hero .symbol{
+.symbol{
     width:100px;
     height:100px;
     border:2px solid #d8c98b;
     border-radius:50%;
-    margin:0 auto 25px;
     display:flex;
     align-items:center;
     justify-content:center;
+    margin:0 auto 25px;
     font-size:45px;
     color:#d8c98b;
 }
@@ -135,38 +102,33 @@ nav a:hover{
 .hero h2{
     font-size:60px;
     letter-spacing:8px;
-    margin-bottom:8px;
 }
 
 .hero h3{
     color:#d8c98b;
     font-weight:normal;
     font-size:20px;
-    margin-bottom:22px;
+    margin:10px 0 20px;
 }
 
 .hero p{
-    max-width:720px;
+    max-width:750px;
     margin:auto;
-    color:#e7eee8;
     font-size:18px;
+    color:#e8eee9;
 }
 
 .buttons{
-    margin-top:32px;
+    margin-top:30px;
 }
 
 .button{
     display:inline-block;
-    padding:14px 28px;
-    margin:6px;
+    padding:14px 27px;
+    margin:5px;
     border-radius:7px;
+    text-decoration:none;
     font-weight:bold;
-    transition:0.2s;
-}
-
-.button:hover{
-    transform:translateY(-2px);
 }
 
 .primary{
@@ -179,17 +141,13 @@ nav a:hover{
     color:white;
 }
 
-/* =========================
-   SECTIONS
-========================= */
-
 section{
-    padding:80px 7%;
+    padding:75px 7%;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:45px;
+    margin-bottom:40px;
 }
 
 .section-title h2{
@@ -201,35 +159,30 @@ section{
     margin-top:8px;
 }
 
-/* =========================
-   CARDS
-========================= */
-
 .cards{
+    max-width:1050px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:24px;
-    max-width:1050px;
-    margin:auto;
 }
 
 .card{
     background:white;
+    padding:30px;
     border-radius:14px;
-    padding:32px;
-    box-shadow:0 5px 25px rgba(0,0,0,0.06);
-    border:1px solid #e1e6df;
-    transition:0.25s;
+    border:1px solid #e0e6df;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+    transition:.2s;
 }
 
 .card:hover{
     transform:translateY(-5px);
-    box-shadow:0 12px 30px rgba(0,0,0,0.09);
 }
 
-.card .icon{
+.icon{
     font-size:38px;
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 .card h3{
@@ -238,7 +191,7 @@ section{
 }
 
 .card p{
-    color:#617067;
+    color:#627067;
 }
 
 .card a{
@@ -248,29 +201,150 @@ section{
     font-weight:bold;
 }
 
-/* =========================
-   ABOUT
-========================= */
-
 .about{
-    background:#e9eee7;
+    background:#e8eee6;
 }
 
-.about-box{
+.calculator{
     max-width:900px;
     margin:auto;
-    text-align:center;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 8px 30px rgba(0,0,0,.07);
 }
 
-.about-box p{
-    margin-top:15px;
-    color:#536158;
+.calc-tabs{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.calc-tab{
+    padding:14px;
+    border:1px solid #d5ddd5;
+    background:#f5f7f2;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#183426;
+}
+
+.calc-tab.active{
+    background:#183426;
+    color:white;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+input,
+select{
+    width:100%;
+    padding:13px;
+    border:1px solid #d3ddd5;
+    border-radius:7px;
+    font-size:16px;
+    background:white;
+}
+
+.nutrients{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.nutrient{
+    background:#f5f7f2;
+    padding:15px;
+    border-radius:9px;
+}
+
+.nutrient strong{
+    display:block;
+    margin-bottom:7px;
+}
+
+.calculate{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:0;
+    border-radius:7px;
+    background:#183426;
+    color:white;
     font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-/* =========================
-   SERVICES
-========================= */
+.calculate:hover{
+    background:#294f3a;
+}
+
+.result{
+    display:none;
+    margin-top:25px;
+    background:#e8eee6;
+    border-radius:10px;
+    padding:22px;
+}
+
+.result h3{
+    margin-bottom:15px;
+}
+
+.result-line{
+    display:flex;
+    justify-content:space-between;
+    padding:9px 0;
+    border-bottom:1px solid #d5ddd5;
+}
+
+.result-line:last-child{
+    border-bottom:0;
+}
+
+.warning{
+    margin-top:20px;
+    padding:15px;
+    background:#fff7df;
+    border-radius:8px;
+    color:#66551e;
+    font-size:14px;
+}
+
+.research{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    max-width:1050px;
+    margin:auto;
+}
+
+.research-item{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    border:1px solid #e0e6df;
+}
+
+.research-item h3{
+    margin-bottom:10px;
+}
+
+.research-item p{
+    color:#68756d;
+    font-size:14px;
+}
 
 .services{
     background:white;
@@ -285,20 +359,14 @@ section{
 }
 
 .service{
-    padding:25px;
-    border:1px solid #dfe5dd;
-    border-radius:12px;
     background:#fafbf9;
-    transition:0.2s;
-}
-
-.service:hover{
-    transform:translateY(-4px);
-    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+    border:1px solid #dfe5dd;
+    padding:25px;
+    border-radius:12px;
 }
 
 .service h3{
-    margin-bottom:9px;
+    margin-bottom:10px;
 }
 
 .service p{
@@ -306,116 +374,16 @@ section{
     font-size:14px;
 }
 
-.service a{
-    display:inline-block;
-    margin-top:15px;
-    color:#183426;
-    font-weight:bold;
-}
-
-/* =========================
-   CALCULATOR
-========================= */
-
-.calculator{
-    max-width:800px;
-    margin:auto;
-    background:white;
-    padding:35px;
-    border-radius:15px;
-    box-shadow:0 8px 30px rgba(0,0,0,0.07);
-}
-
-.calculator h3{
-    font-size:25px;
-    margin-bottom:22px;
-}
-
-.calculator label{
-    display:block;
-    margin-top:15px;
-    margin-bottom:6px;
-    font-weight:bold;
-}
-
-.calculator input,
-.calculator select{
-    width:100%;
-    padding:13px;
-    border:1px solid #d6ded7;
-    border-radius:7px;
-    font-size:16px;
-    background:white;
-}
-
-.calc-button{
-    width:100%;
-    padding:14px;
-    margin-top:22px;
-    border:0;
-    border-radius:7px;
-    background:#183426;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.calc-button:hover{
-    background:#294f3a;
-}
-
-.result{
-    margin-top:22px;
-    padding:18px;
-    border-radius:9px;
-    background:#e9eee7;
-    display:none;
-}
-
-/* =========================
-   RESEARCH
-========================= */
-
-.research-card{
-    max-width:1000px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.research-item{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    border:1px solid #e1e6df;
-}
-
-.research-item h3{
-    margin-bottom:10px;
-}
-
-.research-item p{
-    color:#68756d;
-    font-size:14px;
-}
-
-/* =========================
-   QUOTE
-========================= */
-
 .quote{
     background:#183426;
     color:white;
     text-align:center;
-    padding:85px 7%;
 }
 
 .quote p{
-    font-size:28px;
     max-width:850px;
     margin:auto;
+    font-size:28px;
     font-style:italic;
 }
 
@@ -425,48 +393,112 @@ section{
     color:#d8c98b;
 }
 
-/* =========================
-   CONTACT
-========================= */
-
-.contact{
-    background:#f5f7f2;
-}
-
 .contact-box{
     max-width:650px;
     margin:auto;
     background:white;
-    padding:35px;
+    padding:30px;
     border-radius:14px;
-    box-shadow:0 5px 25px rgba(0,0,0,0.06);
 }
 
 .contact-box input,
 .contact-box textarea{
     width:100%;
     padding:13px;
-    margin-top:7px;
-    margin-bottom:15px;
-    border:1px solid #d6ded7;
+    margin:7px 0 15px;
+    border:1px solid #d3ddd5;
     border-radius:7px;
-    font-family:Arial,sans-serif;
 }
 
 .contact-box textarea{
-    min-height:130px;
-    resize:vertical;
+    height:130px;
 }
 
 .contact-button{
     width:100%;
     padding:14px;
-    border:0;
-    border-radius:7px;
     background:#183426;
     color:white;
+    border:0;
+    border-radius:7px;
     font-weight:bold;
-    cursor:pointer;
 }
 
-/* ======
+footer{
+    background:#10261b;
+    color:#cbd5ce;
+    text-align:center;
+    padding:40px;
+}
+
+footer .brand{
+    color:white;
+    font-size:23px;
+    letter-spacing:3px;
+}
+
+@media(max-width:700px){
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        padding:70px 5%;
+    }
+
+    .hero h2{
+        font-size:40px;
+    }
+
+    section{
+        padding:55px 5%;
+    }
+
+    .cards,
+    .research,
+    .service-list{
+        grid-template-columns:1fr;
+    }
+
+    .nutrients{
+        grid-template-columns:1fr;
+    }
+
+    .calc-tabs{
+        grid-template-columns:1fr;
+    }
+
+    .calculator{
+        padding:22px;
+    }
+
+    .quote p{
+        font-size:21px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+<div class="logo">
+
+<div class="logo-mark">✦</div>
+
+<div>
+<h1>SIVORA</h1>
+<span>KNOWLEDGE • FIELD • HARVEST</span>
+</div>
+
+</div>
+
+<nav>
+<a href="#farmer">Фермеру</a>
+<a href="#student">Студенту</a>
+<a href="#calculator">Ка
