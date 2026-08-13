@@ -265,73 +265,368 @@
           <h3>Моніторинг посівів</h3>
           <p>
             Оцінка стану рослин, фаз розвитку,
-            проблем та потенціалу врожаю.
-          </p>
-        </div>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <div class="card">
-          <div class="icon">🧪</div>
-          <h3>Агрохімія</h3>
-          <p>
-            Живлення рослин, аналіз ґрунту,
-            елементи живлення та рекомендації.
-          </p>
-        </div>
+<title>SIVORA — From Knowledge to Harvest</title>
 
-        <div class="card">
-          <div class="icon">📊</div>
-          <h3>Аналітика</h3>
-          <p>
-            Дані польових дослідів, урожайність,
-            порівняння технологій та економіка.
-          </p>
-        </div>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        <div class="card">
-          <div class="icon">🛰️</div>
-          <h3>Дистанційний моніторинг</h3>
-          <p>
-            Супутникові та дрон-дані для контролю
-            стану посівів.
-          </p>
-        </div>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f2e9;
+    color: #183426;
+    line-height: 1.6;
+}
 
-        <div class="card">
-          <div class="icon">🧠</div>
-          <h3>Plant Intelligence</h3>
-          <p>
-            Перетворення великої кількості даних
-            на зрозумілі агрономічні рішення.
-          </p>
-        </div>
+header {
+    background: #183426;
+    color: #f5f2e9;
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-        <div class="card">
-          <div class="icon">🇺🇦</div>
-          <h3>Українська агрономія</h3>
-          <p>
-            Практичні знання та дані,
-            адаптовані до умов українських полів.
-          </p>
-        </div>
+.logo {
+    font-size: 28px;
+    letter-spacing: 7px;
+    font-weight: 500;
+}
 
-      </div>
+nav a {
+    color: #f5f2e9;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
 
-      <div class="quote">
+.hero {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+        linear-gradient(rgba(245,242,233,0.88), rgba(245,242,233,0.94));
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 10vw, 110px);
+    letter-spacing: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 19px;
+    color: #536358;
+    margin-bottom: 35px;
+}
+
+.button {
+    display: inline-block;
+    background: #183426;
+    color: white;
+    padding: 14px 27px;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.button.light {
+    background: transparent;
+    color: #183426;
+    border: 1px solid #183426;
+}
+
+section {
+    padding: 80px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 32px;
+    border: 1px solid #ddd8c9;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.icon {
+    font-size: 35px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #667269;
+}
+
+.about {
+    background: #183426;
+    color: #f5f2e9;
+    text-align: center;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    font-size: 20px;
+    color: #d7ddd5;
+}
+
+.slogan {
+    margin-top: 35px;
+    font-size: 27px;
+    letter-spacing: 2px;
+}
+
+footer {
+    background: #10251b;
+    color: #bfc9c1;
+    padding: 35px 8%;
+    text-align: center;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        letter-spacing: 8px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SIVORA</div>
+
+    <nav>
+        <a href="#student">Студенту</a>
+        <a href="#farmer">Фермеру</a>
+        <a href="#research">Досліди</a>
+        <a href="#services">Послуги</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+
+        <h1>SIVORA</h1>
+
+        <h2>FROM KNOWLEDGE TO HARVEST.</h2>
+
         <p>
-          «Не просто вирощувати рослину.
-          Розуміти, чому вона росте саме так.»
+            Від знання — до врожаю.
+            Освітня та практична платформа для студентів,
+            агрономів і фермерів.
         </p>
-      </div>
 
-    </section>
+        <a href="#student" class="button">Студенту</a>
+        <a href="#farmer" class="button light">Фермеру</a>
 
-  </main>
+    </div>
+</section>
 
+<section id="student">
 
-  <footer id="contact">
-    <div>© 2026 CropMind</div>
-    <div>Plant Intelligence</div>
-  </footer>
+    <h2 class="section-title">Для студента</h2>
 
-</body>
-</html>
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🎓</div>
+            <h3>Практики</h3>
+            <p>
+                Щоденники, звіти та матеріали
+                для проходження навчальної практики.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📚</div>
+            <h3>Курсові та реферати</h3>
+            <p>
+                Підготовка навчальних матеріалів,
+                оформлення та допомога з дослідженнями.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Презентації</h3>
+            <p>
+                Професійні презентації для навчання,
+                захисту робіт та виступів.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💬</div>
+            <h3>Консультації</h3>
+            <p>
+                Допомога з агрономією, технологіями
+                вирощування та навчальними завданнями.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="farmer">
+
+    <h2 class="section-title">Для фермера</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🌱</div>
+            <h3>Технології вирощування</h3>
+            <p>
+                Практичні технологічні рішення
+                для основних сільськогосподарських культур.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧪</div>
+            <h3>Мінеральне живлення</h3>
+            <p>
+                Добрива, мікроелементи,
+                розрахунки та системи живлення рослин.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🚜</div>
+            <h3>Захист рослин</h3>
+            <p>
+                Гербіциди, фунгіциди, інсектициди
+                та практичні системи захисту.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💡</div>
+            <h3>Агрономічні консультації</h3>
+            <p>
+                Допомога у прийнятті рішень
+                безпосередньо під конкретне поле.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="research">
+
+    <h2 class="section-title">Досліди та знання</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🔬</div>
+            <h3>Польові досліди</h3>
+            <p>
+                Реальні спостереження,
+                порівняння технологій та результати.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📈</div>
+            <h3>Результати</h3>
+            <p>
+                Урожайність, економічна ефективність
+                та практичні висновки.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📰</div>
+            <h3>Аграрні новини</h3>
+            <p>
+                Нові технології, спостереження
+                та актуальні події аграрного сектору.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="services">
+
+    <h2 class="section-title">Послуги</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Навчальні роботи</h3>
+            <p>
+                Практики, реферати, курсові,
+                презентації та інші навчальні матеріали.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Агрономічні консультації</h3>
+            <p>
