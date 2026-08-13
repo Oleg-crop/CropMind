@@ -312,7 +312,50 @@ footer p{
 </head>
 
 <body>
+<script>
 
+function calculateSeeds(){
+
+    const seedRate = parseFloat(
+        document.getElementById("seedRate").value
+    );
+
+    const rowSpacing = parseFloat(
+        document.getElementById("rowSpacing").value
+    );
+
+    const result = document.getElementById("result");
+
+    if(
+        isNaN(seedRate) ||
+        isNaN(rowSpacing) ||
+        seedRate <= 0 ||
+        rowSpacing <= 0
+    ){
+        result.style.display = "block";
+        result.innerHTML = "⚠️ Введи коректні значення.";
+        return;
+    }
+
+    // млн насінин/га → насінин/м²
+    const seedsPerM2 = seedRate * 1000000 / 10000;
+
+    // насінин на погонний метр рядка
+    const seedsPerMeter =
+        seedsPerM2 * (rowSpacing / 100);
+
+    result.style.display = "block";
+
+    result.innerHTML = `
+        <strong>Результат:</strong><br><br>
+        🌱 Насінин на 1 м рядка:
+        <strong>${seedsPerMeter.toFixed(2)}</strong><br>
+        📐 Насінин на 1 м²:
+        <strong>${seedsPerM2.toFixed(2)}</strong>
+    `;
+}
+
+</script>
 <header>
 
 <div class="logo">
@@ -387,7 +430,112 @@ footer p{
 </div>
 
 </section>
+<section id="calculator" class="about">
 
+<div class="section-title">
+    <h2>🧮 Агрономічний калькулятор</h2>
+    <p>Швидкі розрахунки для практичного поля</p>
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <div class="icon">🌱</div>
+        <h3>Норма висіву</h3>
+        <p>
+        Розрахунок кількості насінин на метр,
+        гектар та необхідної маси насіння.
+        </p>
+        <a href="#calculator-form">Розрахувати →</a>
+    </div>
+
+    <div class="card">
+        <div class="icon">🧪</div>
+        <h3>Мінеральне живлення</h3>
+        <p>
+        Розрахунок діючої речовини,
+        фізичної норми добрива та кількості елементів.
+        </p>
+        <a href="#calculator-form">Розрахувати →</a>
+    </div>
+
+</div>
+
+<div id="calculator-form" style="
+    max-width:700px;
+    margin:40px auto 0;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.06);
+">
+
+    <h3 style="margin-bottom:20px;">
+        Розрахунок норми висіву
+    </h3>
+
+    <label>Норма, млн насінин/га</label>
+
+    <input
+        id="seedRate"
+        type="number"
+        step="0.01"
+        placeholder="Наприклад: 0.4"
+        style="
+            width:100%;
+            padding:13px;
+            margin:8px 0 15px;
+            border:1px solid #dfe5dd;
+            border-radius:6px;
+        "
+    >
+
+    <label>Міжряддя, см</label>
+
+    <input
+        id="rowSpacing"
+        type="number"
+        placeholder="Наприклад: 45"
+        style="
+            width:100%;
+            padding:13px;
+            margin:8px 0 15px;
+            border:1px solid #dfe5dd;
+            border-radius:6px;
+        "
+    >
+
+    <button
+        onclick="calculateSeeds()"
+        style="
+            width:100%;
+            padding:14px;
+            border:0;
+            border-radius:6px;
+            background:#183426;
+            color:white;
+            font-weight:bold;
+            font-size:16px;
+            cursor:pointer;
+        "
+    >
+        Розрахувати
+    </button>
+
+    <div
+        id="result"
+        style="
+            margin-top:20px;
+            padding:15px;
+            background:#e9eee7;
+            border-radius:8px;
+            display:none;
+        "
+    ></div>
+
+</div>
+
+</section>
 
 <section id="student">
 
