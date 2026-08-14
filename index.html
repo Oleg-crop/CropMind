@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>СІВОРА — практична агрономія</title>
 
 <style>
-
-/* =========================
-   GLOBAL
-========================= */
 
 *{
 box-sizing:border-box;
@@ -21,7 +16,6 @@ padding:0;
 
 html{
 scroll-behavior:smooth;
-scroll-padding-top:85px;
 }
 
 body{
@@ -31,6 +25,9 @@ color:#183426;
 line-height:1.6;
 }
 
+a{
+text-decoration:none;
+}
 
 /* =========================
    HEADER
@@ -39,59 +36,57 @@ line-height:1.6;
 header{
 background:#183426;
 color:white;
-padding:16px 6%;
+padding:14px 6%;
 display:flex;
 justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
 z-index:1000;
+box-shadow:0 4px 18px rgba(0,0,0,.15);
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 }
 
 .logo-mark{
-width:42px;
-height:42px;
+width:46px;
+height:46px;
 border:2px solid #d8c98b;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
 color:#d8c98b;
-font-size:20px;
-flex-shrink:0;
+font-size:22px;
+font-weight:bold;
 }
 
 .logo h1{
 font-size:23px;
 letter-spacing:4px;
+line-height:1;
 }
 
 .logo small{
+display:block;
 color:#d8c98b;
 font-size:9px;
 letter-spacing:1px;
+margin-top:5px;
 }
-
-
-/* =========================
-   DESKTOP NAVIGATION
-========================= */
 
 nav{
 display:flex;
 align-items:center;
+gap:22px;
 }
 
 nav a{
 color:white;
-text-decoration:none;
-margin-left:18px;
 font-size:14px;
 transition:.2s;
 }
@@ -100,82 +95,99 @@ nav a:hover{
 color:#d8c98b;
 }
 
+/* MOBILE MENU BUTTON */
 
-/* =========================
-   MOBILE MENU BUTTON
-========================= */
-
-.menu-toggle{
+.menu-btn{
 display:none;
 background:none;
-border:none;
-color:white;
-font-size:30px;
+border:1px solid #d8c98b;
+color:#d8c98b;
+font-size:25px;
+width:44px;
+height:40px;
+border-radius:7px;
 cursor:pointer;
-padding:5px;
-line-height:1;
 }
-
 
 /* =========================
    HERO
 ========================= */
 
 .hero{
-background:linear-gradient(135deg,#10291d,#2c5a40);
+background:
+linear-gradient(rgba(16,41,29,.88),rgba(44,90,64,.88)),
+linear-gradient(135deg,#10291d,#2c5a40);
 color:white;
 text-align:center;
-padding:95px 6%;
+padding:105px 6%;
+min-height:650px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
 }
 
 .hero-symbol{
-width:90px;
-height:90px;
+width:105px;
+height:105px;
 border:2px solid #d8c98b;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-margin:0 auto 25px;
-font-size:40px;
+margin-bottom:28px;
+font-size:48px;
 color:#d8c98b;
+box-shadow:0 0 0 8px rgba(216,201,139,.08);
 }
 
 .hero h2{
-font-size:58px;
-letter-spacing:8px;
+font-size:64px;
+letter-spacing:10px;
+margin-bottom:4px;
 }
 
 .hero h3{
 color:#d8c98b;
 font-weight:normal;
-margin:5px 0 20px;
+font-size:20px;
+margin-bottom:20px;
+letter-spacing:1px;
 }
 
 .hero p{
-max-width:720px;
-margin:auto;
+max-width:760px;
 color:#e5eee8;
-font-size:17px;
+font-size:18px;
+margin:auto;
 }
+
+.hero-buttons{
+margin-top:28px;
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
+}
+
+/* BUTTONS */
 
 .btn{
 display:inline-block;
-margin:25px 5px 0;
-padding:13px 25px;
-border-radius:7px;
-text-decoration:none;
+padding:14px 25px;
+border-radius:8px;
 font-weight:bold;
 transition:.2s;
+cursor:pointer;
+}
+
+.btn:hover{
+transform:translateY(-2px);
 }
 
 .btn-main{
 background:#d8c98b;
 color:#183426;
-}
-
-.btn-main:hover{
-transform:translateY(-2px);
 }
 
 .btn-alt{
@@ -188,33 +200,139 @@ background:#d8c98b;
 color:#183426;
 }
 
-
 /* =========================
-   SECTIONS
+   GENERAL SECTIONS
 ========================= */
 
 section{
-padding:70px 6%;
+padding:80px 6%;
 }
 
 .title{
 text-align:center;
-margin-bottom:35px;
+margin-bottom:40px;
 }
 
 .title h2{
-font-size:32px;
-margin-bottom:6px;
+font-size:34px;
+margin-bottom:8px;
 }
 
 .title p{
 color:#68766d;
+max-width:700px;
+margin:auto;
 }
 
+.section-intro{
+max-width:850px;
+margin:-15px auto 35px;
+text-align:center;
+color:#68766d;
+}
 
 /* =========================
-   CARDS
+   ABOUT FOUNDER
 ========================= */
+
+.about-founder{
+background:white;
+}
+
+.founder{
+max-width:1050px;
+margin:auto;
+display:grid;
+grid-template-columns:380px 1fr;
+gap:50px;
+align-items:center;
+}
+
+.founder-photo{
+min-height:430px;
+background:linear-gradient(135deg,#183426,#2c5a40);
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#d8c98b;
+font-size:80px;
+box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.founder-photo span{
+font-size:90px;
+}
+
+.founder-text h2{
+font-size:32px;
+margin-bottom:5px;
+}
+
+.founder-role{
+color:#8c7d43;
+font-weight:bold;
+margin-bottom:18px;
+}
+
+.founder-text p{
+color:#68766d;
+margin-bottom:15px;
+}
+
+.founder-stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin-top:25px;
+}
+
+.stat{
+background:#f3f6f1;
+padding:15px 8px;
+border-radius:10px;
+text-align:center;
+}
+
+.stat strong{
+display:block;
+font-size:22px;
+color:#183426;
+}
+
+.stat span{
+font-size:12px;
+color:#68766d;
+}
+
+/* =========================
+   KNOWLEDGE
+========================= */
+
+.farmer-student{
+background:#f3f6f1;
+}
+
+.highlight{
+max-width:1050px;
+margin:0 auto 30px;
+background:#183426;
+color:white;
+padding:35px;
+border-radius:18px;
+text-align:center;
+}
+
+.highlight h3{
+font-size:27px;
+margin-bottom:8px;
+}
+
+.highlight p{
+color:#dbe6de;
+max-width:760px;
+margin:auto;
+}
 
 .cards{
 max-width:1050px;
@@ -227,15 +345,16 @@ gap:20px;
 .card{
 background:white;
 padding:28px;
-border-radius:14px;
+border-radius:16px;
 border:1px solid #dfe6df;
-box-shadow:0 8px 25px rgba(0,0,0,.06);
-transition:.2s;
+box-shadow:0 8px 25px rgba(0,0,0,.05);
+transition:.25s;
 }
 
 .card:hover{
-transform:translateY(-3px);
-box-shadow:0 12px 30px rgba(0,0,0,.09);
+transform:translateY(-4px);
+box-shadow:0 14px 32px rgba(0,0,0,.09);
+border-color:#d8c98b;
 }
 
 .card .icon{
@@ -244,43 +363,148 @@ font-size:35px;
 
 .card h3{
 margin:8px 0;
-font-size:22px;
+font-size:21px;
 }
 
 .card p{
 color:#68766d;
+font-size:15px;
 }
-
 
 /* =========================
-   FARMER-STUDENT
+   STUDENT SERVICES
 ========================= */
 
-.farmer-student{
-background:#f3f6f1;
+.student-services{
+background:white;
 }
 
-.highlight{
+.service-grid{
 max-width:1050px;
-margin:0 auto 30px;
-background:#183426;
-color:white;
-padding:30px;
-border-radius:15px;
-text-align:center;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
-.highlight h3{
-font-size:25px;
+.student-card{
+background:#fafcf9;
+border:1px solid #dfe6df;
+border-radius:15px;
+padding:24px;
+transition:.25s;
+}
+
+.student-card:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 25px rgba(0,0,0,.07);
+border-color:#d8c98b;
+}
+
+.student-card .icon{
+font-size:30px;
 margin-bottom:8px;
 }
 
-.highlight p{
-color:#dbe6de;
-max-width:750px;
+.student-card h3{
+font-size:19px;
+margin-bottom:7px;
+}
+
+.student-card p{
+font-size:14px;
+color:#68766d;
+margin-bottom:15px;
+}
+
+.price{
+font-weight:bold;
+color:#183426;
+font-size:15px;
+}
+
+.price span{
+color:#8c7d43;
+}
+
+.service-note{
+max-width:850px;
+margin:30px auto 0;
+padding:20px;
+border-radius:12px;
+background:#f3f6f1;
+text-align:center;
+color:#68766d;
+font-size:14px;
+}
+
+/* =========================
+   PRACTICE
+========================= */
+
+.practice{
+background:#183426;
+color:white;
+}
+
+.practice-inner{
+max-width:1050px;
 margin:auto;
 }
 
+.practice .title p{
+color:#dbe6de;
+}
+
+.practice-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.practice-card{
+background:#244b35;
+border:1px solid rgba(216,201,139,.25);
+padding:30px;
+border-radius:16px;
+transition:.2s;
+}
+
+.practice-card:hover{
+transform:translateY(-3px);
+border-color:#d8c98b;
+}
+
+.practice-card .icon{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.practice-card h3{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.practice-card p{
+color:#dbe6de;
+margin-bottom:20px;
+}
+
+.practice-btn{
+display:inline-block;
+background:#d8c98b;
+color:#183426;
+padding:12px 20px;
+border-radius:7px;
+font-weight:bold;
+}
+
+.practice-note{
+text-align:center;
+margin-top:30px;
+color:#bdc9c1;
+font-size:14px;
+}
 
 /* =========================
    RESEARCH
@@ -290,13 +514,64 @@ margin:auto;
 background:#e7eee6;
 }
 
-.research .card{
-background:#fff;
+.research-grid{
+max-width:1050px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
+.research-card{
+background:white;
+padding:25px;
+border-radius:15px;
+border:1px solid #dfe6df;
+transition:.2s;
+}
+
+.research-card:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 25px rgba(0,0,0,.07);
+}
+
+.research-card .icon{
+font-size:34px;
+margin-bottom:8px;
+}
+
+.research-card h3{
+margin-bottom:8px;
+}
+
+.research-card p{
+font-size:14px;
+color:#68766d;
+}
 
 /* =========================
-   SERVICES
+   RESEARCH PRINCIPLES
+========================= */
+
+.research-principles{
+max-width:1050px;
+margin:30px auto 0;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+}
+
+.principle{
+background:#183426;
+color:white;
+padding:18px 12px;
+border-radius:10px;
+text-align:center;
+font-size:14px;
+}
+
+/* =========================
+   FARMER SERVICES
 ========================= */
 
 .services{
@@ -314,14 +589,15 @@ gap:18px;
 .service{
 padding:25px;
 border:1px solid #dfe6df;
-border-radius:12px;
+border-radius:14px;
 background:#fafcf9;
 transition:.2s;
 }
 
 .service:hover{
 transform:translateY(-3px);
-box-shadow:0 8px 20px rgba(0,0,0,.06);
+box-shadow:0 10px 22px rgba(0,0,0,.06);
+border-color:#d8c98b;
 }
 
 .service .icon{
@@ -339,26 +615,38 @@ font-size:14px;
 color:#68766d;
 }
 
-
 /* =========================
-   ABOUT
+   FREE CONSULTATION
 ========================= */
 
-.about{
-background:#183426;
-color:white;
+.consultation{
+background:#f3f6f1;
+}
+
+.consultation-box{
+max-width:900px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:18px;
 text-align:center;
+border:1px solid #dfe6df;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
-.about p{
-max-width:800px;
-margin:15px auto 0;
-color:#dbe6de;
+.consultation-box h2{
+font-size:30px;
+margin-bottom:10px;
 }
 
+.consultation-box p{
+max-width:700px;
+margin:0 auto 22px;
+color:#68766d;
+}
 
 /* =========================
-   CONTACT
+   CONTACTS
 ========================= */
 
 .contacts{
@@ -366,41 +654,39 @@ background:#f3f6f1;
 }
 
 .contact-box{
-max-width:800px;
+max-width:900px;
 margin:auto;
 background:white;
-padding:35px;
-border-radius:15px;
+padding:40px;
+border-radius:18px;
 border:1px solid #dfe6df;
 box-shadow:0 8px 25px rgba(0,0,0,.06);
 text-align:center;
 }
 
 .contact-box h3{
-font-size:25px;
+font-size:27px;
 margin-bottom:10px;
 }
 
-.contact-box p{
+.contact-box > p{
 color:#68766d;
-margin-bottom:22px;
+margin-bottom:25px;
 }
 
 .contact-links{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
 }
 
 .contact-link{
-display:inline-block;
-padding:13px 22px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
+display:block;
+padding:15px;
+border-radius:9px;
 background:#183426;
 color:white;
+font-weight:bold;
 transition:.2s;
 }
 
@@ -414,6 +700,34 @@ background:#d8c98b;
 color:#183426;
 }
 
+.contact-number{
+display:block;
+font-size:18px;
+margin-top:4px;
+}
+
+/* =========================
+   FUTURE VISION
+========================= */
+
+.vision{
+background:#10291d;
+color:white;
+text-align:center;
+}
+
+.vision p{
+max-width:800px;
+margin:15px auto 0;
+color:#dbe6de;
+font-size:16px;
+}
+
+.vision-mark{
+font-size:42px;
+color:#d8c98b;
+margin-bottom:10px;
+}
 
 /* =========================
    FOOTER
@@ -423,12 +737,12 @@ footer{
 background:#0d2117;
 color:#bdc9c1;
 text-align:center;
-padding:35px;
+padding:38px 6%;
 }
 
 footer b{
 color:white;
-font-size:22px;
+font-size:23px;
 letter-spacing:4px;
 }
 
@@ -437,31 +751,45 @@ margin-top:8px;
 font-size:13px;
 }
 
+.footer-links{
+margin-top:18px;
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+}
+
+.footer-links a{
+color:#d8c98b;
+font-size:13px;
+}
 
 /* =========================
    MOBILE
 ========================= */
 
-@media(max-width:750px){
+@media(max-width:850px){
 
 header{
-padding:14px 5%;
+padding:12px 5%;
 }
 
-.menu-toggle{
+.menu-btn{
 display:block;
 }
 
 nav{
 display:none;
 position:absolute;
-top:100%;
+top:72px;
 left:0;
-width:100%;
+right:0;
 background:#183426;
+padding:15px 5%;
 flex-direction:column;
-padding:10px 5% 18px;
-box-shadow:0 8px 20px rgba(0,0,0,.15);
+align-items:stretch;
+gap:0;
+box-shadow:0 8px 20px rgba(0,0,0,.2);
 }
 
 nav.active{
@@ -469,11 +797,9 @@ display:flex;
 }
 
 nav a{
-width:100%;
-margin:0;
 padding:13px 5px;
-font-size:16px;
-border-bottom:1px solid rgba(255,255,255,.08);
+border-bottom:1px solid rgba(255,255,255,.1);
+margin:0;
 }
 
 nav a:last-child{
@@ -481,86 +807,100 @@ border-bottom:none;
 }
 
 .hero{
-padding:70px 5%;
+min-height:570px;
+padding:80px 5%;
 }
 
 .hero h2{
-font-size:42px;
-letter-spacing:5px;
+font-size:43px;
+letter-spacing:6px;
+}
+
+.hero h3{
+font-size:17px;
 }
 
 .hero p{
 font-size:15px;
 }
 
-section{
-padding:55px 5%;
+.founder{
+grid-template-columns:1fr;
+gap:25px;
+}
+
+.founder-photo{
+min-height:330px;
+}
+
+.founder-stats{
+grid-template-columns:repeat(2,1fr);
 }
 
 .cards,
+.service-grid,
+.research-grid,
 .service-list{
 grid-template-columns:1fr;
 }
 
-.contact-box{
-padding:25px 18px;
+.practice-box{
+grid-template-columns:1fr;
+}
+
+.research-principles{
+grid-template-columns:repeat(2,1fr);
 }
 
 .contact-links{
-flex-direction:column;
+grid-template-columns:1fr;
 }
 
-.contact-link{
-width:100%;
+section{
+padding:60px 5%;
 }
 
 }
 
-
-/* =========================
-   SMALL PHONES
-========================= */
-
-@media(max-width:420px){
+@media(max-width:480px){
 
 .logo h1{
-font-size:20px;
+font-size:19px;
 }
 
 .logo small{
-font-size:8px;
+font-size:7px;
+}
+
+.logo-mark{
+width:40px;
+height:40px;
 }
 
 .hero h2{
-font-size:36px;
+font-size:37px;
+letter-spacing:5px;
 }
 
 .hero-symbol{
-width:75px;
-height:75px;
-font-size:32px;
-}
-
-.btn{
-display:block;
-margin:15px auto 0;
-max-width:260px;
+width:85px;
+height:85px;
+font-size:38px;
 }
 
 .title h2{
-font-size:27px;
+font-size:28px;
 }
 
-.card{
-padding:23px;
+.consultation-box,
+.contact-box{
+padding:27px 18px;
 }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
@@ -582,21 +922,21 @@ padding:23px;
 
 </div>
 
-
-<button class="menu-toggle" id="menuToggle" aria-label="Відкрити меню">
+<button class="menu-btn" onclick="toggleMenu()" aria-label="Відкрити меню">
 ☰
 </button>
 
-
 <nav id="mainNav">
 
-<a href="#farmer-student">Фермеру-студенту</a>
+<a href="#farmer-student" onclick="closeMenu()">Фермеру-студенту</a>
 
-<a href="#research">Досліди</a>
+<a href="#practice" onclick="closeMenu()">Практика</a>
 
-<a href="#services">Послуги</a>
+<a href="#research" onclick="closeMenu()">Досліди</a>
 
-<a href="#contacts">Контакти</a>
+<a href="#services" onclick="closeMenu()">Послуги</a>
+
+<a href="#contacts" onclick="closeMenu()">Контакти</a>
 
 </nav>
 
@@ -616,19 +956,109 @@ padding:23px;
 <h3>From Knowledge to Harvest</h3>
 
 <p>
-Практична агрономія, польові досліди та знання,
-які допомагають краще розуміти рослину,
-технологію та результат.
+Практична агрономія, навчання, польові досліди
+та можливості для професійного розвитку.
+Від знань — до поля. Від поля — до професії.
 </p>
 
+<div class="hero-buttons">
 
 <a class="btn btn-main" href="#farmer-student">
 Фермеру-студенту
 </a>
 
+<a class="btn btn-alt" href="#practice">
+Знайти практику
+</a>
+
 <a class="btn btn-alt" href="#research">
 Дивитися досліди
 </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT FOUNDER
+========================= -->
+
+<section class="about-founder">
+
+<div class="title">
+
+<h2>Про СІВОРУ та засновника</h2>
+
+<p>
+Практика, знання та постійний розвиток в агрономії
+</p>
+
+</div>
+
+<div class="founder">
+
+<div class="founder-photo">
+<span>🌱</span>
+</div>
+
+<div class="founder-text">
+
+<h2>Мисюра Олег Віталійович</h2>
+
+<div class="founder-role">
+Агроном • засновник СІВОРИ
+</div>
+
+<p>
+Я працюю агрономом понад два роки та продовжую
+навчатися й розвиватися у професії.
+Працюю з польовими культурами, технологіями
+вирощування, живленням, захистом рослин
+та польовими дослідами.
+</p>
+
+<p>
+СІВОРА створена для того, щоб об'єднати
+агрономічні знання, практичний досвід,
+польові дослідження та людей, які хочуть
+розвиватися в аграрній сфері.
+</p>
+
+<p>
+Одна з головних цілей СІВОРИ — допомогти
+студентам отримувати більше практичних знань,
+знаходити можливості для практики та робити
+впевнені перші кроки у професії.
+</p>
+
+<div class="founder-stats">
+
+<div class="stat">
+<strong>2+</strong>
+<span>роки практики</span>
+</div>
+
+<div class="stat">
+<strong>8</strong>
+<span>основних культур</span>
+</div>
+
+<div class="stat">
+<strong>🔬</strong>
+<span>польові досліди</span>
+</div>
+
+<div class="stat">
+<strong>🎓</strong>
+<span>робота зі студентами</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
@@ -644,28 +1074,25 @@ padding:23px;
 <h2>🌱 Фермеру-студенту</h2>
 
 <p>
-Агрономія зрозумілою мовою — від теорії до поля
+Агрономія зрозумілою мовою — від теорії до реального поля
 </p>
 
 </div>
-
 
 <div class="highlight">
 
 <h3>Знання повинні працювати в полі</h3>
 
 <p>
-СІВОРА об'єднує практичний досвід,
-агрономічні знання та реальні польові спостереження.
-Тут не просто про теорію — тут про те,
-як приймати правильні рішення.
+СІВОРА поєднує навчання, практичний досвід
+та реальні польові спостереження.
+Мета — не просто знати теорію,
+а розуміти, як вона працює у виробництві.
 </p>
 
 </div>
 
-
 <div class="cards">
-
 
 <div class="card">
 
@@ -680,7 +1107,6 @@ padding:23px;
 
 </div>
 
-
 <div class="card">
 
 <div class="icon">🧪</div>
@@ -688,13 +1114,11 @@ padding:23px;
 <h3>Мінеральне живлення</h3>
 
 <p>
-Азот, фосфор, калій, сірка,
-мікроелементи та принципи ефективного
-живлення рослин.
+Азот, фосфор, калій, сірка, мікроелементи
+та принципи ефективного живлення рослин.
 </p>
 
 </div>
-
 
 <div class="card">
 
@@ -704,12 +1128,10 @@ padding:23px;
 
 <p>
 Бур'яни, шкідники та хвороби.
-Визначення проблеми та підбір
-агрономічного рішення.
+Визначення проблеми та пошук агрономічного рішення.
 </p>
 
 </div>
-
 
 <div class="card">
 
@@ -718,13 +1140,11 @@ padding:23px;
 <h3>Морфологія рослин</h3>
 
 <p>
-Будова рослини, фази розвитку,
-діагностика стану та зв'язок
-морфології з урожайністю.
+Будова рослини, фази розвитку, діагностика
+стану та зв'язок морфології з урожайністю.
 </p>
 
 </div>
-
 
 <div class="card">
 
@@ -734,12 +1154,10 @@ padding:23px;
 
 <p>
 Пояснення складних агрономічних тем,
-практичні матеріали та приклади
-з реального виробництва.
+практичні матеріали та приклади з виробництва.
 </p>
 
 </div>
-
 
 <div class="card">
 
@@ -748,11 +1166,264 @@ padding:23px;
 <h3>Практична агрономія для студентів</h3>
 
 <p>
-Поєднання університетських знань
-із реальними польовими ситуаціями,
-спостереженнями та прийняттям
-агрономічних рішень.
+Реальні виробничі ситуації, польові спостереження,
+практичні поради та підготовка до роботи агрономом.
 </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STUDENT SERVICES
+========================= -->
+
+<section class="student-services">
+
+<div class="title">
+
+<h2>🎓 Послуги для студентів</h2>
+
+<p>
+Допомога в навчанні, практиці та професійному розвитку
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="student-card">
+
+<div class="icon">🌱</div>
+
+<h3>Практика</h3>
+
+<p>
+Консультації та допомога з проходженням
+агрономічної практики.
+</p>
+
+<div class="price">
+Платна послуга <span>від 500 грн</span>
+</div>
+
+</div>
+
+<div class="student-card">
+
+<div class="icon">📓</div>
+
+<h3>Щоденник практики</h3>
+
+<p>
+Допомога зі структурою, описом виконаних робіт,
+оформленням та додатками.
+</p>
+
+<div class="price">
+Платна послуга <span>від 500 грн</span>
+</div>
+
+</div>
+
+<div class="student-card">
+
+<div class="icon">📚</div>
+
+<h3>Звіт з практики</h3>
+
+<p>
+Консультації щодо структури, змісту,
+оформлення та перевірки матеріалів.
+</p>
+
+<div class="price">
+Платна послуга <span>від 500 грн</span>
+</div>
+
+</div>
+
+<div class="student-card">
+
+<div class="icon">📝</div>
+
+<h3>Практичні роботи</h3>
+
+<p>
+Розбір завдань, пояснення матеріалу,
+розрахунки та консультаційний супровід.
+</p>
+
+<div class="price">
+Платна послуга <span>від 500 грн</span>
+</div>
+
+</div>
+
+<div class="student-card">
+
+<div class="icon">🔬</div>
+
+<h3>Лабораторні роботи</h3>
+
+<p>
+Допомога з розумінням методики,
+розрахунками, аналізом та оформленням.
+</p>
+
+<div class="price">
+Платна послуга <span>від 500 грн</span>
+</div>
+
+</div>
+
+<div class="student-card">
+
+<div class="icon">🌾</div>
+
+<h3>Технології вирощування</h3>
+
+<p>
+Розбір технологій вирощування культур
+та агрономічних рішень.
+</p>
+
+<div class="price">
+Платна послуга <span>від 500 грн</span>
+</div>
+
+</div>
+
+<div class="student-card">
+
+<div class="icon">📖</div>
+
+<h3>Курсові проєкти</h3>
+
+<p>
+Консультаційний супровід, структура,
+аналіз матеріалів та агрономічна частина.
+</p>
+
+<div class="price">
+Платна послуга <span>від 500 грн</span>
+</div>
+
+</div>
+
+<div class="student-card">
+
+<div class="icon">📄</div>
+
+<h3>Реферати та навчальні матеріали</h3>
+
+<p>
+Допомога зі структурою, пошуком матеріалів,
+поясненням теми та оформленням.
+</p>
+
+<div class="price">
+Платна послуга <span>від 500 грн</span>
+</div>
+
+</div>
+
+<div class="student-card">
+
+<div class="icon">🎓</div>
+
+<h3>Агрономічні консультації</h3>
+
+<p>
+Пояснення агрономічних тем та допомога
+з розумінням практичних завдань.
+</p>
+
+<div class="price">
+Платна послуга <span>від 500 грн</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="service-note">
+
+Вартість залежить від обсягу та складності роботи.
+Деталі можна уточнити телефоном або через месенджер.
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PRACTICE & INTERNSHIP
+========================= -->
+
+<section id="practice" class="practice">
+
+<div class="practice-inner">
+
+<div class="title">
+
+<h2>🌱 Практика та стажування</h2>
+
+<p>
+Від навчання — до реального поля
+</p>
+
+</div>
+
+<div class="practice-box">
+
+<div class="practice-card">
+
+<div class="icon">🎓</div>
+
+<h3>Я студент — шукаю практику</h3>
+
+<p>
+СІВОРА допомагає студентам аграрних спеціальностей
+знаходити можливості для проходження практики,
+отримання реального виробничого досвіду
+та перших професійних контактів.
+</p>
+
+<a class="practice-btn" href="#contacts">
+Звернутися
+</a>
+
+</div>
+
+<div class="practice-card">
+
+<div class="icon">🏢</div>
+
+<h3>Практика та стажування</h3>
+
+<p>
+На першому етапі пропозиції практики та стажування
+будуть додаватися через СІВОРУ вручну.
+У майбутньому напрямок планується розширити
+до повноцінної платформи для студентів та агрокомпаній.
+</p>
+
+<a class="practice-btn" href="#contacts">
+Запропонувати можливість
+</a>
+
+</div>
+
+</div>
+
+<div class="practice-note">
+
+Мета СІВОРИ — допомогти студенту пройти шлях
+від навчання та практики до першого професійного досвіду.
 
 </div>
 
@@ -769,119 +1440,113 @@ padding:23px;
 
 <div class="title">
 
-<h2>🔬 Досліди</h2>
+<h2>🔬 Польові досліди</h2>
 
 <p>
-Реальні польові спостереження та аналіз результатів
+Реальна агрономія починається там, де є спостереження,
+порівняння та результат.
 </p>
 
 </div>
 
+<div class="research-grid">
 
-<div class="highlight">
-
-<h3>Не просто теорія — результат у полі</h3>
-
-<p>
-СІВОРА буде збирати та систематизувати
-результати польових дослідів, щоб порівнювати
-технології, препарати, системи живлення
-та захисту рослин.
-</p>
-
-</div>
-
-
-<div class="cards">
-
-
-<div class="card">
+<div class="research-card">
 
 <div class="icon">🌱</div>
 
-<h3>Порівняння технологій</h3>
+<h3>Густота посіву</h3>
 
 <p>
-Порівняння різних підходів до вирощування культур,
-обробітку ґрунту, строків виконання робіт
-та технологічних рішень.
+Порівняння різної густоти посіву
+та спостереження за розвитком рослин.
 </p>
 
 </div>
 
-
-<div class="card">
+<div class="research-card">
 
 <div class="icon">🧪</div>
 
-<h3>Добрива та живлення</h3>
+<h3>Добрива</h3>
 
 <p>
-Спостереження за впливом систем мінерального
-живлення на розвиток рослин та формування
-врожайності.
+Різні види, норми та системи внесення
+добрив і їхній вплив на культуру.
 </p>
 
 </div>
 
+<div class="research-card">
 
-<div class="card">
+<div class="icon">🌾</div>
+
+<h3>Гібриди та сорти</h3>
+
+<p>
+Порівняння різних гібридів та сортів
+у реальних польових умовах.
+</p>
+
+</div>
+
+<div class="research-card">
 
 <div class="icon">🛡️</div>
 
-<h3>Системи захисту</h3>
+<h3>Захист рослин</h3>
 
 <p>
-Порівняння підходів до контролю бур'янів,
-шкідників і хвороб та оцінка результатів
-у польових умовах.
+Фунгіциди, гербіциди та інсектициди,
+різні норми та фази застосування.
 </p>
 
 </div>
 
+<div class="research-card">
 
-<div class="card">
+<div class="icon">🧬</div>
 
-<div class="icon">📊</div>
-
-<h3>Урожайність</h3>
+<h3>Мікро- та макроелементи</h3>
 
 <p>
-Фіксація врожайності, порівняння варіантів
-і аналіз факторів, які вплинули
-на кінцевий результат.
+Спостереження за впливом живлення
+на розвиток та стан рослин.
 </p>
 
 </div>
 
+<div class="research-card">
 
-<div class="card">
+<div class="icon">🌾</div>
 
-<div class="icon">👀</div>
-
-<h3>Спостереження за рослинами</h3>
+<h3>Насіння та пшениця</h3>
 
 <p>
-Фази розвитку, морфологічні зміни,
-стан рослин та реакція культури
-на технологічні рішення.
+Аналіз насіння, ділянки розмноження
+озимої пшениці та спостереження за посівами.
 </p>
 
 </div>
 
+</div>
 
-<div class="card">
+<div class="research-principles">
 
-<div class="icon">📈</div>
+<div class="principle">
+Спостереження
+</div>
 
-<h3>Аналіз результатів</h3>
+<div class="principle">
+Порівняння
+</div>
 
-<p>
-Цифри, фотографії, польові спостереження
-та висновки, які допомагають зрозуміти,
-що дійсно працює в полі.
-</p>
+<div class="principle">
+Аналіз
+</div>
 
+<div class="principle">
+Висновок
 </div>
 
 </div>
@@ -890,7 +1555,7 @@ padding:23px;
 
 
 <!-- =========================
-     SERVICES
+     FARMER SERVICES
 ========================= -->
 
 <section id="services" class="services">
@@ -900,14 +1565,12 @@ padding:23px;
 <h2>🌾 Послуги</h2>
 
 <p>
-Агрономічна підтримка для практичних завдань
+Агрономічна підтримка для фермерів та виробників
 </p>
 
 </div>
 
-
 <div class="service-list">
-
 
 <div class="service">
 
@@ -916,13 +1579,11 @@ padding:23px;
 <h3>Агрономічні консультації</h3>
 
 <p>
-Консультації щодо вирощування культур,
-технологічних рішень та організації
-агрономічної роботи.
+Консультації щодо технологій вирощування,
+стану посівів та агрономічних рішень.
 </p>
 
 </div>
-
 
 <div class="service">
 
@@ -931,13 +1592,11 @@ padding:23px;
 <h3>Мінеральне живлення</h3>
 
 <p>
-Допомога в оцінці систем живлення,
-потреб рослин та ефективності
-внесення добрив.
+Аналіз систем живлення та підбір
+агрономічних рішень щодо удобрення.
 </p>
 
 </div>
-
 
 <div class="service">
 
@@ -947,12 +1606,23 @@ padding:23px;
 
 <p>
 Аналіз проблем із бур'янами, шкідниками
-та хворобами та пошук
-агрономічного рішення.
+та хворобами рослин.
 </p>
 
 </div>
 
+<div class="service">
+
+<div class="icon">🌾</div>
+
+<h3>Технології вирощування</h3>
+
+<p>
+Аналіз технології та пошук можливостей
+для її вдосконалення.
+</p>
+
+</div>
 
 <div class="service">
 
@@ -961,39 +1631,21 @@ padding:23px;
 <h3>Аналіз польових дослідів</h3>
 
 <p>
-Систематизація спостережень,
-порівняння варіантів та аналіз
-отриманих результатів.
+Допомога в аналізі результатів,
+спостережень та порівнянні варіантів.
 </p>
 
 </div>
 
-
 <div class="service">
 
-<div class="icon">🌱</div>
+<div class="icon">📊</div>
 
-<h3>Аналіз технологій вирощування</h3>
-
-<p>
-Оцінка технологічних операцій,
-їх послідовності та впливу
-на розвиток культури.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="icon">🎓</div>
-
-<h3>Підтримка студентів</h3>
+<h3>Аналіз технологічних рішень</h3>
 
 <p>
-Допомога студентам у розумінні
-агрономічних тем та поєднанні
-теорії з практикою.
+Розбір виробничих ситуацій та пошук
+практичних агрономічних рішень.
 </p>
 
 </div>
@@ -1004,28 +1656,26 @@ padding:23px;
 
 
 <!-- =========================
-     ABOUT
+     CONSULTATION
 ========================= -->
 
-<section class="about">
+<section class="consultation">
 
-<div class="title">
+<div class="consultation-box">
 
-<h2>Про СІВОРУ</h2>
+<h2>🌱 Потрібна порада?</h2>
+
+<p>
+Первинна консультація для фермерів та студентів —
+безкоштовна. Розкажіть про своє питання,
+і ми визначимо, чим СІВОРА може бути корисною.
+</p>
+
+<a class="btn btn-main" href="#contacts">
+Зв'язатися із СІВОРОЮ
+</a>
 
 </div>
-
-<p>
-СІВОРА — це агрономічний проєкт,
-який поєднує знання, практику та польові досліди.
-</p>
-
-<p>
-Мета СІВОРИ — пояснювати складні агрономічні
-процеси зрозуміло, аналізувати реальні ситуації
-та показувати, як знання перетворюються
-на практичний результат.
-</p>
 
 </section>
 
@@ -1041,44 +1691,99 @@ padding:23px;
 <h2>📞 Контакти</h2>
 
 <p>
-Зв'язок щодо консультацій, співпраці
-та агрономічних питань
+Оберіть зручний спосіб зв'язку
 </p>
 
 </div>
-
 
 <div class="contact-box">
 
-<h3>Зв'яжіться із СІВОРОЮ</h3>
+<h3>Зв'язатися із СІВОРОЮ</h3>
 
 <p>
-Якщо у вас є питання щодо агрономії,
-польових дослідів або консультацій —
-будемо раді поспілкуватися.
+Телефонуйте або пишіть у зручний для вас месенджер.
 </p>
-
 
 <div class="contact-links">
 
-<a
-class="contact-link"
-href="tel:+380680382907"
->
-📞 068 038 29 07
+<a class="contact-link" href="tel:+380680382907">
+
+📞 Телефон
+
+<span class="contact-number">
+068 038 29 07
+</span>
+
 </a>
 
+<a class="contact-link" href="viber://chat?number=%2B380680382907">
 
-<a
-class="contact-link email"
-href="mailto:cropmind0@gmail.com"
->
-✉️ cropmind0@gmail.com
+💬 Viber
+
+<span class="contact-number">
+068 038 29 07
+</span>
+
+</a>
+
+<a class="contact-link" href="https://wa.me/380680382907">
+
+🟢 WhatsApp
+
+<span class="contact-number">
+068 038 29 07
+</span>
+
+</a>
+
+<a class="contact-link" href="https://t.me/0661780516">
+
+✈️ Telegram
+
+<span class="contact-number">
+066 17 80 516
+</span>
+
+</a>
+
+<a class="contact-link email" href="mailto:cropmind0@gmail.com">
+
+✉️ Email
+
+<span class="contact-number">
+cropmind0@gmail.com
+</span>
+
 </a>
 
 </div>
 
 </div>
+
+</section>
+
+
+<!-- =========================
+     VISION
+========================= -->
+
+<section class="vision">
+
+<div class="vision-mark">✦</div>
+
+<h2>СІВОРА — це тільки початок</h2>
+
+<p>
+Ми будуємо платформу, яка має об'єднати
+агрономічні знання, студентів, фермерів,
+практику, польові досліди та аграрний бізнес.
+</p>
+
+<p>
+Від знань — до поля.
+Від поля — до професії.
+Від професії — до результату.
+</p>
 
 </section>
 
@@ -1095,6 +1800,20 @@ href="mailto:cropmind0@gmail.com"
 KNOWLEDGE • FIELD • HARVEST
 </p>
 
+<div class="footer-links">
+
+<a href="#farmer-student">Фермеру-студенту</a>
+
+<a href="#practice">Практика</a>
+
+<a href="#research">Досліди</a>
+
+<a href="#services">Послуги</a>
+
+<a href="#contacts">Контакти</a>
+
+</div>
+
 <p>
 © 2026 СІВОРА. Практична агрономія.
 </p>
@@ -1103,51 +1822,28 @@ KNOWLEDGE • FIELD • HARVEST
 
 
 <!-- =========================
-     MOBILE MENU JAVASCRIPT
+     MOBILE MENU SCRIPT
 ========================= -->
 
 <script>
 
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+function toggleMenu(){
 
-menuToggle.addEventListener("click", function(){
+const nav = document.getElementById("mainNav");
 
-mainNav.classList.toggle("active");
-
-if(mainNav.classList.contains("active")){
-
-menuToggle.innerHTML = "✕";
-menuToggle.setAttribute("aria-label","Закрити меню");
-
-}else{
-
-menuToggle.innerHTML = "☰";
-menuToggle.setAttribute("aria-label","Відкрити меню");
+nav.classList.toggle("active");
 
 }
 
-});
+function closeMenu(){
 
+const nav = document.getElementById("mainNav");
 
-const navLinks = mainNav.querySelectorAll("a");
+nav.classList.remove("active");
 
-navLinks.forEach(function(link){
-
-link.addEventListener("click", function(){
-
-mainNav.classList.remove("active");
-
-menuToggle.innerHTML = "☰";
-
-menuToggle.setAttribute("aria-label","Відкрити меню");
-
-});
-
-});
+}
 
 </script>
-
 
 </body>
 </html>
