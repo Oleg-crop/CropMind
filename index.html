@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -8,24 +9,32 @@
 
 <style>
 
+/* =========================
+   GLOBAL
+========================= */
+
 *{
 box-sizing:border-box;
 margin:0;
-padding:0
+padding:0;
 }
 
 html{
-scroll-behavior:smooth
+scroll-behavior:smooth;
+scroll-padding-top:85px;
 }
 
 body{
 font-family:Arial,sans-serif;
 background:#f3f6f1;
 color:#183426;
-line-height:1.6
+line-height:1.6;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
 background:#183426;
@@ -36,13 +45,13 @@ justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
-z-index:100
+z-index:1000;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:10px
+gap:10px;
 }
 
 .logo-mark{
@@ -54,18 +63,29 @@ display:flex;
 align-items:center;
 justify-content:center;
 color:#d8c98b;
-font-size:20px
+font-size:20px;
+flex-shrink:0;
 }
 
 .logo h1{
 font-size:23px;
-letter-spacing:4px
+letter-spacing:4px;
 }
 
 .logo small{
 color:#d8c98b;
 font-size:9px;
-letter-spacing:1px
+letter-spacing:1px;
+}
+
+
+/* =========================
+   DESKTOP NAVIGATION
+========================= */
+
+nav{
+display:flex;
+align-items:center;
 }
 
 nav a{
@@ -73,20 +93,39 @@ color:white;
 text-decoration:none;
 margin-left:18px;
 font-size:14px;
-transition:.2s
+transition:.2s;
 }
 
 nav a:hover{
-color:#d8c98b
+color:#d8c98b;
 }
 
-/* HERO */
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-toggle{
+display:none;
+background:none;
+border:none;
+color:white;
+font-size:30px;
+cursor:pointer;
+padding:5px;
+line-height:1;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
 background:linear-gradient(135deg,#10291d,#2c5a40);
 color:white;
 text-align:center;
-padding:95px 6%
+padding:95px 6%;
 }
 
 .hero-symbol{
@@ -99,25 +138,25 @@ align-items:center;
 justify-content:center;
 margin:0 auto 25px;
 font-size:40px;
-color:#d8c98b
+color:#d8c98b;
 }
 
 .hero h2{
 font-size:58px;
-letter-spacing:8px
+letter-spacing:8px;
 }
 
 .hero h3{
 color:#d8c98b;
 font-weight:normal;
-margin:5px 0 20px
+margin:5px 0 20px;
 }
 
 .hero p{
 max-width:720px;
 margin:auto;
 color:#e5eee8;
-font-size:17px
+font-size:17px;
 }
 
 .btn{
@@ -127,56 +166,62 @@ padding:13px 25px;
 border-radius:7px;
 text-decoration:none;
 font-weight:bold;
-transition:.2s
+transition:.2s;
 }
 
 .btn-main{
 background:#d8c98b;
-color:#183426
+color:#183426;
 }
 
 .btn-main:hover{
-transform:translateY(-2px)
+transform:translateY(-2px);
 }
 
 .btn-alt{
 border:1px solid #d8c98b;
-color:white
+color:white;
 }
 
 .btn-alt:hover{
 background:#d8c98b;
-color:#183426
+color:#183426;
 }
 
-/* SECTIONS */
+
+/* =========================
+   SECTIONS
+========================= */
 
 section{
-padding:70px 6%
+padding:70px 6%;
 }
 
 .title{
 text-align:center;
-margin-bottom:35px
+margin-bottom:35px;
 }
 
 .title h2{
 font-size:32px;
-margin-bottom:6px
+margin-bottom:6px;
 }
 
 .title p{
-color:#68766d
+color:#68766d;
 }
 
-/* CARDS */
+
+/* =========================
+   CARDS
+========================= */
 
 .cards{
 max-width:1050px;
 margin:auto;
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:20px
+gap:20px;
 }
 
 .card{
@@ -185,31 +230,34 @@ padding:28px;
 border-radius:14px;
 border:1px solid #dfe6df;
 box-shadow:0 8px 25px rgba(0,0,0,.06);
-transition:.2s
+transition:.2s;
 }
 
 .card:hover{
 transform:translateY(-3px);
-box-shadow:0 12px 30px rgba(0,0,0,.09)
+box-shadow:0 12px 30px rgba(0,0,0,.09);
 }
 
 .card .icon{
-font-size:35px
+font-size:35px;
 }
 
 .card h3{
 margin:8px 0;
-font-size:22px
+font-size:22px;
 }
 
 .card p{
-color:#68766d
+color:#68766d;
 }
 
-/* FARMER-STUDENT */
+
+/* =========================
+   FARMER-STUDENT
+========================= */
 
 .farmer-student{
-background:#f3f6f1
+background:#f3f6f1;
 }
 
 .highlight{
@@ -219,34 +267,40 @@ background:#183426;
 color:white;
 padding:30px;
 border-radius:15px;
-text-align:center
+text-align:center;
 }
 
 .highlight h3{
 font-size:25px;
-margin-bottom:8px
+margin-bottom:8px;
 }
 
 .highlight p{
 color:#dbe6de;
 max-width:750px;
-margin:auto
+margin:auto;
 }
 
-/* RESEARCH */
+
+/* =========================
+   RESEARCH
+========================= */
 
 .research{
-background:#e7eee6
+background:#e7eee6;
 }
 
 .research .card{
-background:#fff
+background:#fff;
 }
 
-/* SERVICES */
+
+/* =========================
+   SERVICES
+========================= */
 
 .services{
-background:white
+background:white;
 }
 
 .service-list{
@@ -254,7 +308,7 @@ max-width:1050px;
 margin:auto;
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:18px
+gap:18px;
 }
 
 .service{
@@ -262,47 +316,53 @@ padding:25px;
 border:1px solid #dfe6df;
 border-radius:12px;
 background:#fafcf9;
-transition:.2s
+transition:.2s;
 }
 
 .service:hover{
 transform:translateY(-3px);
-box-shadow:0 8px 20px rgba(0,0,0,.06)
+box-shadow:0 8px 20px rgba(0,0,0,.06);
 }
 
 .service .icon{
 font-size:32px;
-margin-bottom:8px
+margin-bottom:8px;
 }
 
 .service h3{
 margin-bottom:8px;
-font-size:19px
+font-size:19px;
 }
 
 .service p{
 font-size:14px;
-color:#68766d
+color:#68766d;
 }
 
-/* ABOUT */
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
 background:#183426;
 color:white;
-text-align:center
+text-align:center;
 }
 
 .about p{
 max-width:800px;
 margin:15px auto 0;
-color:#dbe6de
+color:#dbe6de;
 }
 
-/* CONTACT */
+
+/* =========================
+   CONTACT
+========================= */
 
 .contacts{
-background:#f3f6f1
+background:#f3f6f1;
 }
 
 .contact-box{
@@ -313,24 +373,24 @@ padding:35px;
 border-radius:15px;
 border:1px solid #dfe6df;
 box-shadow:0 8px 25px rgba(0,0,0,.06);
-text-align:center
+text-align:center;
 }
 
 .contact-box h3{
 font-size:25px;
-margin-bottom:10px
+margin-bottom:10px;
 }
 
 .contact-box p{
 color:#68766d;
-margin-bottom:22px
+margin-bottom:22px;
 }
 
 .contact-links{
 display:flex;
 justify-content:center;
 gap:15px;
-flex-wrap:wrap
+flex-wrap:wrap;
 }
 
 .contact-link{
@@ -341,94 +401,173 @@ text-decoration:none;
 font-weight:bold;
 background:#183426;
 color:white;
-transition:.2s
+transition:.2s;
 }
 
 .contact-link:hover{
 background:#2c5a40;
-transform:translateY(-2px)
+transform:translateY(-2px);
 }
 
 .contact-link.email{
 background:#d8c98b;
-color:#183426
+color:#183426;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
 background:#0d2117;
 color:#bdc9c1;
 text-align:center;
-padding:35px
+padding:35px;
 }
 
 footer b{
 color:white;
 font-size:22px;
-letter-spacing:4px
+letter-spacing:4px;
 }
 
 footer p{
 margin-top:8px;
-font-size:13px
+font-size:13px;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:750px){
 
 header{
-padding:14px 5%
+padding:14px 5%;
+}
+
+.menu-toggle{
+display:block;
 }
 
 nav{
-display:none
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:#183426;
+flex-direction:column;
+padding:10px 5% 18px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+nav.active{
+display:flex;
+}
+
+nav a{
+width:100%;
+margin:0;
+padding:13px 5px;
+font-size:16px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav a:last-child{
+border-bottom:none;
 }
 
 .hero{
-padding:70px 5%
+padding:70px 5%;
 }
 
 .hero h2{
 font-size:42px;
-letter-spacing:5px
+letter-spacing:5px;
 }
 
 .hero p{
-font-size:15px
+font-size:15px;
 }
 
 section{
-padding:55px 5%
+padding:55px 5%;
 }
 
 .cards,
 .service-list{
-grid-template-columns:1fr
+grid-template-columns:1fr;
 }
 
 .contact-box{
-padding:25px 18px
+padding:25px 18px;
 }
 
 .contact-links{
-flex-direction:column
+flex-direction:column;
 }
 
 .contact-link{
-width:100%
+width:100%;
+}
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media(max-width:420px){
+
+.logo h1{
+font-size:20px;
+}
+
+.logo small{
+font-size:8px;
+}
+
+.hero h2{
+font-size:36px;
+}
+
+.hero-symbol{
+width:75px;
+height:75px;
+font-size:32px;
+}
+
+.btn{
+display:block;
+margin:15px auto 0;
+max-width:260px;
+}
+
+.title h2{
+font-size:27px;
+}
+
+.card{
+padding:23px;
 }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
 <header>
 
@@ -443,7 +582,13 @@ width:100%
 
 </div>
 
-<nav>
+
+<button class="menu-toggle" id="menuToggle" aria-label="Відкрити меню">
+☰
+</button>
+
+
+<nav id="mainNav">
 
 <a href="#farmer-student">Фермеру-студенту</a>
 
@@ -458,7 +603,9 @@ width:100%
 </header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -474,6 +621,7 @@ width:100%
 технологію та результат.
 </p>
 
+
 <a class="btn btn-main" href="#farmer-student">
 Фермеру-студенту
 </a>
@@ -485,7 +633,9 @@ width:100%
 </section>
 
 
-<!-- FARMER-STUDENT -->
+<!-- =========================
+     FARMER-STUDENT
+========================= -->
 
 <section id="farmer-student" class="farmer-student">
 
@@ -539,7 +689,8 @@ width:100%
 
 <p>
 Азот, фосфор, калій, сірка,
-мікроелементи та принципи ефективного живлення рослин.
+мікроелементи та принципи ефективного
+живлення рослин.
 </p>
 
 </div>
@@ -553,7 +704,8 @@ width:100%
 
 <p>
 Бур'яни, шкідники та хвороби.
-Визначення проблеми та підбір агрономічного рішення.
+Визначення проблеми та підбір
+агрономічного рішення.
 </p>
 
 </div>
@@ -567,7 +719,8 @@ width:100%
 
 <p>
 Будова рослини, фази розвитку,
-діагностика стану та зв'язок морфології з урожайністю.
+діагностика стану та зв'язок
+морфології з урожайністю.
 </p>
 
 </div>
@@ -581,7 +734,8 @@ width:100%
 
 <p>
 Пояснення складних агрономічних тем,
-практичні матеріали та приклади з реального виробництва.
+практичні матеріали та приклади
+з реального виробництва.
 </p>
 
 </div>
@@ -591,7 +745,409 @@ width:100%
 
 <div class="icon">🎓</div>
 
-<h3>Для студентів</h3>
+<h3>Практична агрономія для студентів</h3>
 
 <p>
-Практични
+Поєднання університетських знань
+із реальними польовими ситуаціями,
+спостереженнями та прийняттям
+агрономічних рішень.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESEARCH
+========================= -->
+
+<section id="research" class="research">
+
+<div class="title">
+
+<h2>🔬 Досліди</h2>
+
+<p>
+Реальні польові спостереження та аналіз результатів
+</p>
+
+</div>
+
+
+<div class="highlight">
+
+<h3>Не просто теорія — результат у полі</h3>
+
+<p>
+СІВОРА буде збирати та систематизувати
+результати польових дослідів, щоб порівнювати
+технології, препарати, системи живлення
+та захисту рослин.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">🌱</div>
+
+<h3>Порівняння технологій</h3>
+
+<p>
+Порівняння різних підходів до вирощування культур,
+обробітку ґрунту, строків виконання робіт
+та технологічних рішень.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🧪</div>
+
+<h3>Добрива та живлення</h3>
+
+<p>
+Спостереження за впливом систем мінерального
+живлення на розвиток рослин та формування
+врожайності.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🛡️</div>
+
+<h3>Системи захисту</h3>
+
+<p>
+Порівняння підходів до контролю бур'янів,
+шкідників і хвороб та оцінка результатів
+у польових умовах.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📊</div>
+
+<h3>Урожайність</h3>
+
+<p>
+Фіксація врожайності, порівняння варіантів
+і аналіз факторів, які вплинули
+на кінцевий результат.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">👀</div>
+
+<h3>Спостереження за рослинами</h3>
+
+<p>
+Фази розвитку, морфологічні зміни,
+стан рослин та реакція культури
+на технологічні рішення.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📈</div>
+
+<h3>Аналіз результатів</h3>
+
+<p>
+Цифри, фотографії, польові спостереження
+та висновки, які допомагають зрозуміти,
+що дійсно працює в полі.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services" class="services">
+
+<div class="title">
+
+<h2>🌾 Послуги</h2>
+
+<p>
+Агрономічна підтримка для практичних завдань
+</p>
+
+</div>
+
+
+<div class="service-list">
+
+
+<div class="service">
+
+<div class="icon">👨‍🌾</div>
+
+<h3>Агрономічні консультації</h3>
+
+<p>
+Консультації щодо вирощування культур,
+технологічних рішень та організації
+агрономічної роботи.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">🧪</div>
+
+<h3>Мінеральне живлення</h3>
+
+<p>
+Допомога в оцінці систем живлення,
+потреб рослин та ефективності
+внесення добрив.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">🛡️</div>
+
+<h3>Захист рослин</h3>
+
+<p>
+Аналіз проблем із бур'янами, шкідниками
+та хворобами та пошук
+агрономічного рішення.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">🔬</div>
+
+<h3>Аналіз польових дослідів</h3>
+
+<p>
+Систематизація спостережень,
+порівняння варіантів та аналіз
+отриманих результатів.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">🌱</div>
+
+<h3>Аналіз технологій вирощування</h3>
+
+<p>
+Оцінка технологічних операцій,
+їх послідовності та впливу
+на розвиток культури.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">🎓</div>
+
+<h3>Підтримка студентів</h3>
+
+<p>
+Допомога студентам у розумінні
+агрономічних тем та поєднанні
+теорії з практикою.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about">
+
+<div class="title">
+
+<h2>Про СІВОРУ</h2>
+
+</div>
+
+<p>
+СІВОРА — це агрономічний проєкт,
+який поєднує знання, практику та польові досліди.
+</p>
+
+<p>
+Мета СІВОРИ — пояснювати складні агрономічні
+процеси зрозуміло, аналізувати реальні ситуації
+та показувати, як знання перетворюються
+на практичний результат.
+</p>
+
+</section>
+
+
+<!-- =========================
+     CONTACTS
+========================= -->
+
+<section id="contacts" class="contacts">
+
+<div class="title">
+
+<h2>📞 Контакти</h2>
+
+<p>
+Зв'язок щодо консультацій, співпраці
+та агрономічних питань
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h3>Зв'яжіться із СІВОРОЮ</h3>
+
+<p>
+Якщо у вас є питання щодо агрономії,
+польових дослідів або консультацій —
+будемо раді поспілкуватися.
+</p>
+
+
+<div class="contact-links">
+
+<a
+class="contact-link"
+href="tel:+380680382907"
+>
+📞 068 038 29 07
+</a>
+
+
+<a
+class="contact-link email"
+href="mailto:cropmind0@gmail.com"
+>
+✉️ cropmind0@gmail.com
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<b>СІВОРА</b>
+
+<p>
+KNOWLEDGE • FIELD • HARVEST
+</p>
+
+<p>
+© 2026 СІВОРА. Практична агрономія.
+</p>
+
+</footer>
+
+
+<!-- =========================
+     MOBILE MENU JAVASCRIPT
+========================= -->
+
+<script>
+
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+
+menuToggle.addEventListener("click", function(){
+
+mainNav.classList.toggle("active");
+
+if(mainNav.classList.contains("active")){
+
+menuToggle.innerHTML = "✕";
+menuToggle.setAttribute("aria-label","Закрити меню");
+
+}else{
+
+menuToggle.innerHTML = "☰";
+menuToggle.setAttribute("aria-label","Відкрити меню");
+
+}
+
+});
+
+
+const navLinks = mainNav.querySelectorAll("a");
+
+navLinks.forEach(function(link){
+
+link.addEventListener("click", function(){
+
+mainNav.classList.remove("active");
+
+menuToggle.innerHTML = "☰";
+
+menuToggle.setAttribute("aria-label","Відкрити меню");
+
+});
+
+});
+
+</script>
+
+
+</body>
+</html>
