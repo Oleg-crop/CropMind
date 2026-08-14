@@ -2,18 +2,31 @@
 <html lang="uk">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SIVORA — агрономія</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>СІВОРА — практична агрономія</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+
+html{
+scroll-behavior:smooth
+}
+
 body{
 font-family:Arial,sans-serif;
 background:#f3f6f1;
 color:#183426;
 line-height:1.6
 }
+
+/* HEADER */
+
 header{
 background:#183426;
 color:white;
@@ -23,13 +36,15 @@ justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
-z-index:10
+z-index:100
 }
+
 .logo{
 display:flex;
 align-items:center;
 gap:10px
 }
+
 .logo-mark{
 width:42px;
 height:42px;
@@ -38,29 +53,42 @@ border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-color:#d8c98b
+color:#d8c98b;
+font-size:20px
 }
+
 .logo h1{
 font-size:23px;
 letter-spacing:4px
 }
+
 .logo small{
 color:#d8c98b;
 font-size:9px;
 letter-spacing:1px
 }
+
 nav a{
 color:white;
 text-decoration:none;
 margin-left:18px;
-font-size:14px
+font-size:14px;
+transition:.2s
 }
+
+nav a:hover{
+color:#d8c98b
+}
+
+/* HERO */
+
 .hero{
 background:linear-gradient(135deg,#10291d,#2c5a40);
 color:white;
 text-align:center;
-padding:90px 6%
+padding:95px 6%
 }
+
 .hero-symbol{
 width:90px;
 height:90px;
@@ -73,372 +101,497 @@ margin:0 auto 25px;
 font-size:40px;
 color:#d8c98b
 }
+
 .hero h2{
 font-size:58px;
 letter-spacing:8px
 }
+
 .hero h3{
 color:#d8c98b;
 font-weight:normal;
 margin:5px 0 20px
 }
+
 .hero p{
-max-width:700px;
+max-width:720px;
 margin:auto;
-color:#e5eee8
+color:#e5eee8;
+font-size:17px
 }
+
 .btn{
 display:inline-block;
 margin:25px 5px 0;
 padding:13px 25px;
 border-radius:7px;
 text-decoration:none;
-font-weight:bold
+font-weight:bold;
+transition:.2s
 }
+
 .btn-main{
 background:#d8c98b;
 color:#183426
 }
+
+.btn-main:hover{
+transform:translateY(-2px)
+}
+
 .btn-alt{
 border:1px solid #d8c98b;
 color:white
 }
-section{padding:70px 6%}
+
+.btn-alt:hover{
+background:#d8c98b;
+color:#183426
+}
+
+/* SECTIONS */
+
+section{
+padding:70px 6%
+}
+
 .title{
 text-align:center;
 margin-bottom:35px
 }
-.title h2{font-size:32px}
-.title p{color:#68766d}
+
+.title h2{
+font-size:32px;
+margin-bottom:6px
+}
+
+.title p{
+color:#68766d
+}
+
+/* CARDS */
+
 .cards{
-max-width:1000px;
+max-width:1050px;
 margin:auto;
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:20px
 }
+
 .card{
 background:white;
 padding:28px;
 border-radius:14px;
 border:1px solid #dfe6df;
-box-shadow:0 8px 25px rgba(0,0,0,.06)
+box-shadow:0 8px 25px rgba(0,0,0,.06);
+transition:.2s
 }
-.card .icon{font-size:35px}
+
+.card:hover{
+transform:translateY(-3px);
+box-shadow:0 12px 30px rgba(0,0,0,.09)
+}
+
+.card .icon{
+font-size:35px
+}
+
 .card h3{
 margin:8px 0;
 font-size:22px
 }
-.card p{color:#68766d}
+
+.card p{
+color:#68766d
+}
+
+/* FARMER-STUDENT */
+
+.farmer-student{
+background:#f3f6f1
+}
+
+.highlight{
+max-width:1050px;
+margin:0 auto 30px;
+background:#183426;
+color:white;
+padding:30px;
+border-radius:15px;
+text-align:center
+}
+
+.highlight h3{
+font-size:25px;
+margin-bottom:8px
+}
+
+.highlight p{
+color:#dbe6de;
+max-width:750px;
+margin:auto
+}
+
+/* RESEARCH */
+
 .research{
 background:#e7eee6
 }
-.calc-section{
-background:white
+
+.research .card{
+background:#fff
 }
-.calculator{
-max-width:850px;
-margin:auto;
-background:#f8faf7;
-padding:30px;
-border-radius:15px;
-border:1px solid #dce5dc
-}
-.calc-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px
-}
-.field label{
-display:block;
-font-weight:bold;
-margin-bottom:6px
-}
-.field input,.field select{
-width:100%;
-padding:12px;
-border:1px solid #ccd8cd;
-border-radius:7px;
-font-size:16px;
-background:white
-}
-.calc-btn{
-width:100%;
-margin-top:20px;
-padding:14px;
-border:0;
-border-radius:7px;
-background:#183426;
-color:white;
-font-size:17px;
-font-weight:bold
-}
-.result{
-display:none;
-margin-top:20px;
-padding:20px;
-background:#e7f1e7;
-border-radius:10px;
-text-align:center
-}
-.result strong{
-font-size:32px;
-display:block;
-color:#183426
-}
+
+/* SERVICES */
+
 .services{
 background:white
 }
+
 .service-list{
-max-width:1000px;
+max-width:1050px;
 margin:auto;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px
 }
+
 .service{
-padding:24px;
+padding:25px;
 border:1px solid #dfe6df;
 border-radius:12px;
-background:#fafcf9
+background:#fafcf9;
+transition:.2s
 }
-.service h3{margin-bottom:8px}
+
+.service:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,.06)
+}
+
+.service .icon{
+font-size:32px;
+margin-bottom:8px
+}
+
+.service h3{
+margin-bottom:8px;
+font-size:19px
+}
+
 .service p{
 font-size:14px;
 color:#68766d
 }
+
+/* ABOUT */
+
 .about{
 background:#183426;
 color:white;
 text-align:center
 }
+
 .about p{
 max-width:800px;
 margin:15px auto 0;
 color:#dbe6de
 }
+
+/* CONTACT */
+
+.contacts{
+background:#f3f6f1
+}
+
+.contact-box{
+max-width:800px;
+margin:auto;
+background:white;
+padding:35px;
+border-radius:15px;
+border:1px solid #dfe6df;
+box-shadow:0 8px 25px rgba(0,0,0,.06);
+text-align:center
+}
+
+.contact-box h3{
+font-size:25px;
+margin-bottom:10px
+}
+
+.contact-box p{
+color:#68766d;
+margin-bottom:22px
+}
+
+.contact-links{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap
+}
+
+.contact-link{
+display:inline-block;
+padding:13px 22px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+background:#183426;
+color:white;
+transition:.2s
+}
+
+.contact-link:hover{
+background:#2c5a40;
+transform:translateY(-2px)
+}
+
+.contact-link.email{
+background:#d8c98b;
+color:#183426
+}
+
+/* FOOTER */
+
 footer{
 background:#0d2117;
 color:#bdc9c1;
 text-align:center;
 padding:35px
 }
+
 footer b{
 color:white;
 font-size:22px;
 letter-spacing:4px
 }
+
+footer p{
+margin-top:8px;
+font-size:13px
+}
+
+/* MOBILE */
+
 @media(max-width:750px){
-header{padding:14px 5%}
-nav{display:none}
-.hero{padding:70px 5%}
+
+header{
+padding:14px 5%
+}
+
+nav{
+display:none
+}
+
+.hero{
+padding:70px 5%
+}
+
 .hero h2{
 font-size:42px;
 letter-spacing:5px
 }
-section{padding:55px 5%}
-.cards,.calc-grid,.service-list{
+
+.hero p{
+font-size:15px
+}
+
+section{
+padding:55px 5%
+}
+
+.cards,
+.service-list{
 grid-template-columns:1fr
 }
-.calculator{padding:20px}
+
+.contact-box{
+padding:25px 18px
 }
+
+.contact-links{
+flex-direction:column
+}
+
+.contact-link{
+width:100%
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
 <div class="logo">
+
 <div class="logo-mark">✦</div>
+
 <div>
-<h1>SIVORA</h1>
+<h1>СІВОРА</h1>
 <small>KNOWLEDGE • FIELD • HARVEST</small>
 </div>
+
 </div>
 
 <nav>
-<a href="#farmer">Фермеру</a>
-<a href="#student">Студенту</a>
+
+<a href="#farmer-student">Фермеру-студенту</a>
+
 <a href="#research">Досліди</a>
-<a href="#calculator">Калькулятор</a>
+
 <a href="#services">Послуги</a>
+
+<a href="#contacts">Контакти</a>
+
 </nav>
+
 </header>
 
+
+<!-- HERO -->
 
 <section class="hero">
 
 <div class="hero-symbol">✦</div>
 
-<h2>SIVORA</h2>
+<h2>СІВОРА</h2>
 
 <h3>From Knowledge to Harvest</h3>
 
 <p>
-Сучасна агрономічна платформа про рослинництво,
-живлення, захист рослин, досліди та практичні рішення.
+Практична агрономія, польові досліди та знання,
+які допомагають краще розуміти рослину,
+технологію та результат.
 </p>
 
-<a class="btn btn-main" href="#farmer">Я фермер</a>
-<a class="btn btn-alt" href="#student">Я студент</a>
+<a class="btn btn-main" href="#farmer-student">
+Фермеру-студенту
+</a>
+
+<a class="btn btn-alt" href="#research">
+Дивитися досліди
+</a>
 
 </section>
 
 
-<section id="farmer">
+<!-- FARMER-STUDENT -->
+
+<section id="farmer-student" class="farmer-student">
 
 <div class="title">
-<h2>🌱 Фермеру</h2>
-<p>Практичні рішення для реального поля</p>
+
+<h2>🌱 Фермеру-студенту</h2>
+
+<p>
+Агрономія зрозумілою мовою — від теорії до поля
+</p>
+
 </div>
+
+
+<div class="highlight">
+
+<h3>Знання повинні працювати в полі</h3>
+
+<p>
+СІВОРА об'єднує практичний досвід,
+агрономічні знання та реальні польові спостереження.
+Тут не просто про теорію — тут про те,
+як приймати правильні рішення.
+</p>
+
+</div>
+
 
 <div class="cards">
 
-<div class="card">
-<div class="icon">🌾</div>
-<h3>Технології вирощування</h3>
-<p>
-Посів, живлення, захист рослин,
-строки виконання робіт та технологічні рішення.
-</p>
-</div>
 
 <div class="card">
+
+<div class="icon">🌾</div>
+
+<h3>Технології вирощування</h3>
+
+<p>
+Посів, обробіток ґрунту, строки виконання робіт,
+сівозміна та технології вирощування культур.
+</p>
+
+</div>
+
+
+<div class="card">
+
 <div class="icon">🧪</div>
-<h3>Живлення рослин</h3>
+
+<h3>Мінеральне живлення</h3>
+
 <p>
 Азот, фосфор, калій, сірка,
-мікроелементи та правильне застосування добрив.
+мікроелементи та принципи ефективного живлення рослин.
 </p>
+
 </div>
 
+
 <div class="card">
+
 <div class="icon">🐛</div>
+
 <h3>Захист рослин</h3>
+
 <p>
 Бур'яни, шкідники та хвороби.
-Визначення проблеми та вибір рішення.
+Визначення проблеми та підбір агрономічного рішення.
 </p>
+
 </div>
 
+
 <div class="card">
-<div class="icon">📊</div>
-<h3>Агрономічні розрахунки</h3>
+
+<div class="icon">🔬</div>
+
+<h3>Морфологія рослин</h3>
+
 <p>
-Густота рослин, норма висіву,
-урожайність та норми добрив.
+Будова рослини, фази розвитку,
+діагностика стану та зв'язок морфології з урожайністю.
 </p>
-</div>
 
 </div>
-</section>
 
-
-<section id="student">
-
-<div class="title">
-<h2>🎓 Студенту</h2>
-<p>Агрономія зрозумілою мовою</p>
-</div>
-
-<div class="cards">
 
 <div class="card">
+
 <div class="icon">📚</div>
+
 <h3>Навчальні матеріали</h3>
+
 <p>
-Конспекти, пояснення, приклади
-та практичні матеріали з агрономії.
+Пояснення складних агрономічних тем,
+практичні матеріали та приклади з реального виробництва.
 </p>
+
 </div>
+
 
 <div class="card">
-<div class="icon">📝</div>
-<h3>Практичні роботи</h3>
+
+<div class="icon">🎓</div>
+
+<h3>Для студентів</h3>
+
 <p>
-Допомога з практиками, рефератами,
-презентаціями та навчальними роботами.
-</p>
-</div>
-
-</div>
-</section>
-
-
-<section id="research" class="research">
-
-<div class="title">
-<h2>🔬 Досліди</h2>
-<p>Спостереження, цифри та реальний результат</p>
-</div>
-
-<div class="cards">
-
-<div class="card">
-<h3>🌱 Польові досліди</h3>
-<p>
-Порівняння технологій, препаратів,
-добрив та варіантів вирощування.
-</p>
-</div>
-
-<div class="card">
-<h3>📈 Урожайність</h3>
-<p>
-Аналіз урожайності та ефективності
-агрономічних рішень.
-</p>
-</div>
-
-</div>
-</section>
-
-
-<section id="calculator" class="calc-section">
-
-<div class="title">
-<h2>🧮 Калькулятор мінеральних добрив</h2>
-<p>Розрахунок необхідної кількості добрива</p>
-</div>
-
-<div class="calculator">
-
-<div class="calc-grid">
-
-<div class="field">
-<label>Площа, га</label>
-<input id="area" type="number" placeholder="Наприклад 100">
-</div>
-
-<div class="field">
-<label>Норма діючої речовини, кг/га</label>
-<input id="rate" type="number" placeholder="Наприклад 100">
-</div>
-
-<div class="field">
-<label>Вміст діючої речовини, %</label>
-<input id="content" type="number" placeholder="Наприклад 34">
-</div>
-
-<div class="field">
-<label>Добриво</label>
-
-<select id="fertilizer">
-
-<option value="34">Аміачна селітра — 34% N</option>
-
-<option value="46">Карбамід — 46% N</option>
-
-<option value="21">Сульфат амонію — 21% N</option>
-
-<option value="20">Амофос — 20% N</option>
-
-<option value="default">Інше добриво</option>
-
-</select>
-
-</div>
-
-</div>
-
-<button class="calc-btn" onclick="calcu
+Практични
