@@ -534,21 +534,98 @@ box-shadow:
 0 22px 65px rgba(0,0,0,.28);
 }
 
+
+/* МІСЦЕ ПІД МАЙБУТНЄ ФОТО */
+
 .about-photo{
 width:100%;
 
 aspect-ratio:4/3;
-
-object-fit:cover;
-
-object-position:center;
 
 border-radius:17px;
 
 border:
 1px solid rgba(216,189,114,.3);
 
-background:#0b120d;
+background:
+radial-gradient(
+circle at 50% 45%,
+rgba(37,83,57,.30),
+transparent 45%
+),
+linear-gradient(
+145deg,
+#0c1710,
+#050805
+);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+position:relative;
+overflow:hidden;
+
+box-shadow:
+inset 0 0 80px rgba(0,0,0,.28);
+}
+
+.about-photo::before{
+content:"";
+
+position:absolute;
+
+width:72%;
+aspect-ratio:1/1;
+
+border-radius:50%;
+
+border:
+1px solid rgba(216,189,114,.12);
+}
+
+.about-photo::after{
+content:"";
+
+position:absolute;
+
+width:52%;
+aspect-ratio:1/1;
+
+border-radius:50%;
+
+border:
+1px solid rgba(216,189,114,.08);
+}
+
+.about-photo-name{
+position:relative;
+z-index:2;
+
+font-family:Georgia,"Times New Roman",serif;
+
+font-size:clamp(46px,6vw,82px);
+
+font-weight:bold;
+
+letter-spacing:3px;
+
+background:
+linear-gradient(
+135deg,
+#f8edc7,
+#d8bd72 52%,
+#a77b2e
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
+
+filter:
+drop-shadow(
+0 8px 22px rgba(216,189,114,.12)
+);
 }
 
 .about-copy{
@@ -2199,10 +2276,15 @@ id="about">
 <div class="about-card">
 
 
-<img
-src="олег-сівора.jpg"
-alt="Мисюра Олег Віталійович — засновник SIVORA"
-class="about-photo">
+<!-- МАЙБУТНЄ МІСЦЕ ПІД ФОТО -->
+
+<div class="about-photo">
+
+<div class="about-photo-name">
+SIVORA
+</div>
+
+</div>
 
 
 <div class="about-copy">
