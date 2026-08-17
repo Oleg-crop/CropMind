@@ -208,29 +208,86 @@ padding:30px 0 24px;
 }
 
 .hero-shell{
-display:grid;
-grid-template-columns:47% 53%;
-min-height:650px;
+min-height:620px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+position:relative;
+overflow:hidden;
 
 border:1px solid var(--line);
 border-radius:26px;
 
-overflow:hidden;
-
 background:
-linear-gradient(145deg,#070b08,#020302);
+radial-gradient(
+circle at 50% 30%,
+rgba(37,83,57,.27),
+transparent 36%
+),
+radial-gradient(
+circle at 82% 18%,
+rgba(216,189,114,.07),
+transparent 25%
+),
+linear-gradient(
+145deg,
+#0b130d,
+#030503 72%
+);
 
 box-shadow:var(--shadow);
 }
 
+.hero-shell::before{
+content:"";
 
-/* LEFT */
+position:absolute;
+
+width:650px;
+height:650px;
+
+border-radius:50%;
+
+border:1px solid rgba(216,189,114,.08);
+
+top:-330px;
+right:-220px;
+
+pointer-events:none;
+}
+
+.hero-shell::after{
+content:"";
+
+position:absolute;
+
+width:400px;
+height:400px;
+
+border-radius:50%;
+
+border:1px solid rgba(216,189,114,.05);
+
+bottom:-250px;
+left:-140px;
+
+pointer-events:none;
+}
 
 .hero-copy{
-padding:58px 48px;
+width:min(900px,90%);
+
+padding:70px 40px;
+
 display:flex;
 flex-direction:column;
+align-items:center;
 justify-content:center;
+
+text-align:center;
+
 position:relative;
 z-index:3;
 }
@@ -239,53 +296,56 @@ z-index:3;
 font-size:10px;
 color:var(--gold);
 letter-spacing:3.6px;
-margin-bottom:16px;
+margin-bottom:18px;
 }
 
 .hero-kicker::after{
 content:"";
 display:block;
-width:46px;
+width:60px;
 height:2px;
-margin-top:12px;
-background:linear-gradient(90deg,var(--gold),transparent);
+margin:13px auto 0;
+background:linear-gradient(90deg,transparent,var(--gold),transparent);
 }
 
 .hero h1{
 font-family:Georgia,"Times New Roman",serif;
 
-font-size:clamp(72px,9vw,120px);
+font-size:clamp(78px,13vw,165px);
 
-line-height:.9;
+line-height:.88;
 
-letter-spacing:1px;
+letter-spacing:3px;
 
 background:
 linear-gradient(
 135deg,
-#f8edc7,
+#fff2c9,
 #d9bd70 48%,
-#9e7324
+#9e7324 78%,
+#e6cf8b
 );
 
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 background-clip:text;
 
-filter:drop-shadow(0 8px 20px rgba(216,189,114,.08));
+filter:
+drop-shadow(0 10px 26px rgba(0,0,0,.55))
+drop-shadow(0 0 18px rgba(216,189,114,.08));
 
-margin-bottom:28px;
+margin-bottom:34px;
 }
 
 .hero-subtitle{
-font-size:clamp(22px,2.5vw,32px);
-line-height:1.32;
-max-width:590px;
+font-size:clamp(22px,3vw,34px);
+line-height:1.35;
+max-width:720px;
 color:#f0f2ee;
 }
 
 .hero-description{
-max-width:600px;
+max-width:680px;
 margin-top:22px;
 font-size:14px;
 line-height:1.8;
@@ -293,16 +353,22 @@ color:var(--muted);
 }
 
 .hero-features{
+width:100%;
+max-width:760px;
+
 display:grid;
 grid-template-columns:repeat(3,1fr);
+
 gap:12px;
-margin-top:30px;
-padding-top:24px;
+
+margin-top:32px;
+padding-top:25px;
+
 border-top:1px solid var(--soft);
 }
 
 .hero-feature{
-padding:5px 10px 5px 0;
+padding:8px 12px;
 font-size:12px;
 line-height:1.5;
 color:#c5cdc7;
@@ -316,6 +382,7 @@ margin-bottom:8px;
 
 .buttons{
 display:flex;
+justify-content:center;
 gap:12px;
 flex-wrap:wrap;
 margin-top:32px;
@@ -366,142 +433,6 @@ transform:translateY(-2px);
 }
 
 
-/* RIGHT HERO IMAGE */
-
-.hero-visual{
-position:relative;
-
-min-height:650px;
-
-overflow:hidden;
-
-background:
-linear-gradient(
-90deg,
-rgba(4,6,4,.08),
-rgba(4,6,4,0)
-),
-url("sivora-hero.jpg")
-center center / cover
-no-repeat,
-#112619;
-}
-
-
-/* LEFT DARK FADE */
-
-.hero-visual::before{
-content:"";
-
-position:absolute;
-inset:0;
-
-background:
-linear-gradient(
-90deg,
-rgba(2,4,2,.35) 0%,
-rgba(2,4,2,.10) 18%,
-transparent 42%
-),
-linear-gradient(
-180deg,
-rgba(0,0,0,.04),
-rgba(0,0,0,.16)
-);
-
-z-index:1;
-}
-
-
-/* GOLD ARC */
-
-.hero-gold-arc{
-position:absolute;
-
-width:620px;
-height:760px;
-
-right:-310px;
-top:-60px;
-
-border:1px solid rgba(216,189,114,.7);
-
-border-radius:50%;
-
-z-index:2;
-
-box-shadow:
-0 0 30px rgba(216,189,114,.07),
-inset 0 0 30px rgba(216,189,114,.04);
-
-pointer-events:none;
-}
-
-
-/* DECORATIVE WHEAT */
-
-.hero-wheat{
-position:absolute;
-
-right:14px;
-bottom:68px;
-
-width:145px;
-height:330px;
-
-z-index:4;
-
-opacity:.93;
-
-filter:
-drop-shadow(0 10px 14px rgba(0,0,0,.45))
-drop-shadow(0 0 10px rgba(216,189,114,.12));
-}
-
-.hero-wheat svg{
-width:100%;
-height:100%;
-}
-
-
-/* HERO LABEL */
-
-.field-label{
-position:absolute;
-
-right:44px;
-bottom:24px;
-
-z-index:5;
-
-font-size:10px;
-font-weight:bold;
-
-letter-spacing:4px;
-
-color:var(--gold2);
-}
-
-.field-label::after{
-content:"";
-
-display:block;
-
-width:100px;
-height:1px;
-
-margin-top:8px;
-margin-left:auto;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-var(--gold)
-);
-}
-
-
 /* =========================
 ABOUT
 ========================= */
@@ -512,13 +443,13 @@ padding:42px 0 25px;
 
 .about-card{
 display:grid;
-grid-template-columns:.8fr 1.3fr;
+grid-template-columns:320px 1fr;
 
 gap:35px;
 
 align-items:center;
 
-padding:19px;
+padding:24px;
 
 border:1px solid var(--line);
 border-radius:22px;
@@ -535,29 +466,15 @@ box-shadow:
 }
 
 
-/* МІСЦЕ ПІД МАЙБУТНЄ ФОТО */
+/* КОМПАКТНЕ МІСЦЕ ПІД МАЙБУТНЄ ФОТО */
 
-.about-photo{
+.about-photo-placeholder{
 width:100%;
+max-width:300px;
 
-aspect-ratio:4/3;
+aspect-ratio:4/5;
 
-border-radius:17px;
-
-border:
-1px solid rgba(216,189,114,.3);
-
-background:
-radial-gradient(
-circle at 50% 45%,
-rgba(37,83,57,.30),
-transparent 45%
-),
-linear-gradient(
-145deg,
-#0c1710,
-#050805
-);
+margin:auto;
 
 display:flex;
 align-items:center;
@@ -566,66 +483,44 @@ justify-content:center;
 position:relative;
 overflow:hidden;
 
-box-shadow:
-inset 0 0 80px rgba(0,0,0,.28);
-}
-
-.about-photo::before{
-content:"";
-
-position:absolute;
-
-width:72%;
-aspect-ratio:1/1;
-
-border-radius:50%;
+border-radius:18px;
 
 border:
-1px solid rgba(216,189,114,.12);
-}
-
-.about-photo::after{
-content:"";
-
-position:absolute;
-
-width:52%;
-aspect-ratio:1/1;
-
-border-radius:50%;
-
-border:
-1px solid rgba(216,189,114,.08);
-}
-
-.about-photo-name{
-position:relative;
-z-index:2;
-
-font-family:Georgia,"Times New Roman",serif;
-
-font-size:clamp(46px,6vw,82px);
-
-font-weight:bold;
-
-letter-spacing:3px;
+1px solid rgba(216,189,114,.30);
 
 background:
+radial-gradient(
+circle at 50% 35%,
+rgba(37,83,57,.28),
+transparent 40%
+),
 linear-gradient(
-135deg,
-#f8edc7,
-#d8bd72 52%,
-#a77b2e
+145deg,
+#0b150e,
+#050805
 );
 
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-background-clip:text;
+box-shadow:
+inset 0 0 60px rgba(0,0,0,.28);
+}
 
-filter:
-drop-shadow(
-0 8px 22px rgba(216,189,114,.12)
-);
+.photo-symbol{
+width:90px;
+height:90px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+border:1px solid rgba(216,189,114,.25);
+
+color:var(--gold);
+
+font-size:40px;
+
+background:rgba(216,189,114,.035);
 }
 
 .about-copy{
@@ -686,9 +581,7 @@ padding:34px 0 28px;
 display:flex;
 align-items:flex-end;
 justify-content:space-between;
-
 gap:25px;
-
 margin-bottom:22px;
 }
 
@@ -1100,7 +993,7 @@ color:var(--muted);
 
 .student-intro{
 display:grid;
-grid-template-columns:.8fr 1.4fr;
+grid-template-columns:260px 1fr;
 gap:28px;
 align-items:center;
 
@@ -1121,18 +1014,30 @@ linear-gradient(
 margin-bottom:26px;
 }
 
-.student-photo{
+.student-photo-placeholder{
 width:100%;
-max-width:360px;
+max-width:240px;
 
 aspect-ratio:4/5;
 
-object-fit:cover;
+margin:auto;
+
+display:flex;
+align-items:center;
+justify-content:center;
 
 border-radius:15px;
 
 border:
 1px solid rgba(216,189,114,.3);
+
+background:
+radial-gradient(
+circle at center,
+rgba(37,83,57,.26),
+transparent 45%
+),
+#08100b;
 }
 
 .student-copy h3{
@@ -1331,16 +1236,13 @@ color:var(--gold);
 
 .nutrient p{
 font-size:12px;
-
 color:#8e9a92;
 }
 
 .info-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-
 gap:16px;
-
 padding:20px;
 }
 
@@ -1354,35 +1256,23 @@ list-style:none;
 
 .info li{
 padding:5px 0;
-
 font-size:13px;
-
 color:#9daaa2;
-
-border-bottom:
-1px solid rgba(255,255,255,.04);
+border-bottom:1px solid rgba(255,255,255,.04);
 }
 
 .info li::before{
 content:"•";
-
 color:var(--gold);
-
 margin-right:7px;
 }
 
 .disclaimer{
 margin-top:18px;
-
 padding:18px;
-
-border-left:
-2px solid var(--gold);
-
+border-left:2px solid var(--gold);
 background:#0b120d;
-
 font-size:12px;
-
 color:#89958d;
 }
 
@@ -1395,17 +1285,13 @@ color:var(--gold2);
 
 .table-card{
 overflow:hidden;
-
 margin-bottom:22px;
-
 border-color:var(--line);
 }
 
 .table-title{
 padding:20px;
-
-border-bottom:
-1px solid var(--line);
+border-bottom:1px solid var(--line);
 }
 
 .table-title h3{
@@ -1431,22 +1317,15 @@ border-collapse:collapse;
 th,
 td{
 padding:13px;
-
 text-align:left;
-
-border-bottom:
-1px solid rgba(255,255,255,.055);
-
+border-bottom:1px solid rgba(255,255,255,.055);
 font-size:12px;
 }
 
 th{
 background:#0b120d;
-
 color:var(--gold2);
-
 font-size:10px;
-
 letter-spacing:1px;
 }
 
@@ -1473,13 +1352,10 @@ overflow:hidden;
 
 .research-image{
 height:145px;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 font-size:48px;
-
 background:#101a13;
 }
 
@@ -1489,9 +1365,7 @@ padding:20px;
 
 .tag{
 font-size:9px;
-
 color:var(--gold);
-
 letter-spacing:2px;
 }
 
@@ -1510,18 +1384,11 @@ color:var(--muted);
 
 .contact-box{
 max-width:900px;
-
 margin:auto;
-
 padding:34px;
-
 text-align:center;
-
-border:
-1px solid var(--line);
-
+border:1px solid var(--line);
 border-radius:18px;
-
 background:
 linear-gradient(
 145deg,
@@ -1542,11 +1409,8 @@ color:var(--muted);
 
 .phone{
 font-size:clamp(24px,5vw,36px);
-
 color:var(--gold2);
-
 font-weight:bold;
-
 margin:18px 0;
 }
 
@@ -1559,16 +1423,10 @@ flex-wrap:wrap;
 
 .contact-link{
 padding:12px 16px;
-
 min-width:150px;
-
-border:
-1px solid var(--soft);
-
+border:1px solid var(--soft);
 border-radius:8px;
-
 text-decoration:none;
-
 font-size:12px;
 }
 
@@ -1580,38 +1438,27 @@ color:#10150f;
 .contact-info{
 display:grid;
 grid-template-columns:1fr 1fr;
-
 gap:10px;
-
 margin-top:18px;
 }
 
 .contact-info div{
 padding:13px;
-
-border:
-1px solid var(--soft);
-
+border:1px solid var(--soft);
 border-radius:8px;
-
 font-size:12px;
-
 color:#9ca89f;
 }
 
 .contact-info strong{
 display:block;
-
 color:#fff;
-
 margin-bottom:3px;
 }
 
 .free{
 margin-top:18px;
-
 font-size:12px;
-
 color:var(--gold);
 }
 
@@ -1628,7 +1475,6 @@ display:none;
 position:absolute;
 
 top:76px;
-
 left:4%;
 right:4%;
 
@@ -1639,9 +1485,7 @@ align-items:stretch;
 
 background:#071009;
 
-border:
-1px solid var(--line);
-
+border:1px solid var(--line);
 border-radius:12px;
 }
 
@@ -1651,9 +1495,7 @@ display:flex;
 
 nav a{
 padding:12px;
-
-border-bottom:
-1px solid var(--soft);
+border-bottom:1px solid var(--soft);
 }
 
 .mobile-menu{
@@ -1665,36 +1507,23 @@ display:none;
 }
 
 .hero-shell{
-grid-template-columns:1fr;
+min-height:570px;
 }
 
 .hero-copy{
-padding:50px 36px;
+padding:60px 30px;
 }
 
-.hero-visual{
-min-height:470px;
-}
-
-.hero-gold-arc{
-width:520px;
-height:580px;
-
-right:-250px;
-top:-25px;
-}
-
-.hero-wheat{
-height:280px;
-width:120px;
+.hero h1{
+font-size:clamp(76px,18vw,150px);
 }
 
 .about-card{
-grid-template-columns:1fr;
+grid-template-columns:250px 1fr;
 }
 
-.about-copy{
-padding:8px 10px 15px;
+.about-photo-placeholder{
+max-width:230px;
 }
 
 .launch-grid{
@@ -1707,9 +1536,7 @@ grid-template-columns:1fr;
 
 .contact-cell{
 border-right:0;
-
-border-bottom:
-1px solid var(--line);
+border-bottom:1px solid var(--line);
 }
 
 .contact-cell:last-child{
@@ -1728,7 +1555,11 @@ grid-template-columns:repeat(2,1fr);
 }
 
 .student-intro{
-grid-template-columns:1fr;
+grid-template-columns:220px 1fr;
+}
+
+.student-photo-placeholder{
+max-width:200px;
 }
 
 }
@@ -1744,12 +1575,18 @@ PHONE
 padding-top:16px;
 }
 
+.hero-shell{
+min-height:auto;
+}
+
 .hero-copy{
-padding:42px 22px;
+width:100%;
+padding:55px 20px;
 }
 
 .hero h1{
-font-size:62px;
+font-size:clamp(62px,20vw,105px);
+letter-spacing:1px;
 }
 
 .hero-subtitle{
@@ -1760,21 +1597,21 @@ font-size:23px;
 grid-template-columns:1fr;
 }
 
-.hero-visual{
-min-height:340px;
+.about-card{
+grid-template-columns:1fr;
 }
 
-.hero-wheat{
-width:90px;
-height:220px;
-right:5px;
-bottom:55px;
+.about-photo-placeholder{
+max-width:210px;
 }
 
-.field-label{
-right:18px;
-font-size:8px;
-letter-spacing:2px;
+.about-copy{
+padding:8px 10px 15px;
+text-align:center;
+}
+
+.about-badges{
+justify-content:center;
 }
 
 .section-head{
@@ -1816,6 +1653,14 @@ padding:18px;
 grid-template-columns:1fr;
 }
 
+.student-intro{
+grid-template-columns:1fr;
+}
+
+.student-photo-placeholder{
+max-width:180px;
+}
+
 .nutrient-grid{
 grid-template-columns:1fr 1fr;
 }
@@ -1844,7 +1689,7 @@ grid-template-columns:1fr;
 @media(max-width:460px){
 
 .hero h1{
-font-size:54px;
+font-size:18vw;
 }
 
 .nutrient-grid{
@@ -1875,9 +1720,7 @@ grid-template-columns:1fr;
 <linearGradient id="goldLogo" x1="0" y1="0" x2="1" y2="1">
 
 <stop offset="0%" stop-color="#f0dfaa"/>
-
 <stop offset="45%" stop-color="#d8bd72"/>
-
 <stop offset="100%" stop-color="#9b7934"/>
 
 </linearGradient>
@@ -1957,21 +1800,10 @@ aria-label="Відкрити меню">
 
 <nav id="mainNav">
 
-<a href="#top">
-Головна
-</a>
-
-<a href="#about">
-Про SIVORA
-</a>
-
-<a href="#sections">
-Усі розділи
-</a>
-
-<a href="#quickContacts">
-Контакти
-</a>
+<a href="#top">Головна</a>
+<a href="#about">Про SIVORA</a>
+<a href="#sections">Усі розділи</a>
+<a href="#quickContacts">Контакти</a>
 
 </nav>
 
@@ -2095,168 +1927,6 @@ onclick="openSection('research')">
 
 </div>
 
-
-
-<div class="hero-visual">
-
-
-<div class="hero-gold-arc">
-</div>
-
-
-<div class="hero-wheat">
-
-<svg
-viewBox="0 0 150 360"
-xmlns="http://www.w3.org/2000/svg">
-
-<defs>
-
-<linearGradient
-id="wheatGold"
-x1="0"
-y1="0"
-x2="1"
-y2="1">
-
-<stop
-offset="0%"
-stop-color="#f4e4af"/>
-
-<stop
-offset="45%"
-stop-color="#d8bd72"/>
-
-<stop
-offset="100%"
-stop-color="#9b7127"/>
-
-</linearGradient>
-
-</defs>
-
-
-<path
-d="M78 345
-C75 280 73 210 78 40"
-
-fill="none"
-
-stroke="url(#wheatGold)"
-
-stroke-width="3"/>
-
-
-<path
-d="M78 95
-C51 82 38 64 42 47
-C61 54 74 70 78 95"
-
-fill="none"
-
-stroke="url(#wheatGold)"
-
-stroke-width="4"/>
-
-
-<path
-d="M78 125
-C104 111 117 92 113 74
-C94 81 82 99 78 125"
-
-fill="none"
-
-stroke="url(#wheatGold)"
-
-stroke-width="4"/>
-
-
-<path
-d="M77 154
-C49 141 36 122 40 104
-C59 112 73 130 77 154"
-
-fill="none"
-
-stroke="url(#wheatGold)"
-
-stroke-width="4"/>
-
-
-<path
-d="M77 185
-C104 171 117 152 113 134
-C94 141 82 159 77 185"
-
-fill="none"
-
-stroke="url(#wheatGold)"
-
-stroke-width="4"/>
-
-
-<path
-d="M76 215
-C50 203 39 184 42 168
-C60 175 72 193 76 215"
-
-fill="none"
-
-stroke="url(#wheatGold)"
-
-stroke-width="4"/>
-
-
-<path
-d="M76 246
-C101 233 113 215 110 199
-C92 206 81 223 76 246"
-
-fill="none"
-
-stroke="url(#wheatGold)"
-
-stroke-width="4"/>
-
-
-<path
-d="M75 275
-C53 264 42 248 45 233
-C61 240 71 255 75 275"
-
-fill="none"
-
-stroke="url(#wheatGold)"
-
-stroke-width="4"/>
-
-
-<path
-d="M75 303
-C96 293 106 277 103 263
-C88 268 79 283 75 303"
-
-fill="none"
-
-stroke="url(#wheatGold)"
-
-stroke-width="4"/>
-
-
-</svg>
-
-</div>
-
-
-<div class="field-label">
-
-FIELD • RESEARCH • RESULT
-
-</div>
-
-
-</div>
-
 </div>
 
 </div>
@@ -2276,12 +1946,10 @@ id="about">
 <div class="about-card">
 
 
-<!-- МАЙБУТНЄ МІСЦЕ ПІД ФОТО -->
+<div class="about-photo-placeholder">
 
-<div class="about-photo">
-
-<div class="about-photo-name">
-SIVORA
+<div class="photo-symbol">
+◎
 </div>
 
 </div>
@@ -2343,25 +2011,11 @@ SIVORA
 
 <div class="about-badges">
 
-<span>
-Польові досліди
-</span>
-
-<span>
-Технології вирощування
-</span>
-
-<span>
-Живлення
-</span>
-
-<span>
-Захист рослин
-</span>
-
-<span>
-Практика для студентів
-</span>
+<span>Польові досліди</span>
+<span>Технології вирощування</span>
+<span>Живлення</span>
+<span>Захист рослин</span>
+<span>Практика для студентів</span>
 
 </div>
 
@@ -2389,15 +2043,11 @@ id="sections">
 <div>
 
 <div class="eyebrow">
-
 УСІ МОЖЛИВОСТІ SIVORA
-
 </div>
 
 <h2>
-
 Оберіть потрібний розділ
-
 </h2>
 
 </div>
@@ -2424,9 +2074,7 @@ onclick="openSection('farmer')">
 
 <div>
 
-<div class="launch-icon">
-🎓
-</div>
+<div class="launch-icon">🎓</div>
 
 <h3>
 Фермеру та студенту
@@ -2440,9 +2088,7 @@ onclick="openSection('farmer')">
 
 </div>
 
-<div class="launch-arrow">
-→
-</div>
+<div class="launch-arrow">→</div>
 
 </button>
 
@@ -2454,9 +2100,7 @@ onclick="openSection('students')">
 
 <div>
 
-<div class="launch-icon">
-💼
-</div>
+<div class="launch-icon">💼</div>
 
 <h3>
 Послуги
@@ -2472,9 +2116,7 @@ onclick="openSection('students')">
 
 </div>
 
-<div class="launch-arrow">
-→
-</div>
+<div class="launch-arrow">→</div>
 
 </button>
 
@@ -2486,9 +2128,7 @@ onclick="openSection('cultures')">
 
 <div>
 
-<div class="launch-icon">
-🌱
-</div>
+<div class="launch-icon">🌱</div>
 
 <h3>
 Технології вирощування
@@ -2501,9 +2141,7 @@ onclick="openSection('cultures')">
 
 </div>
 
-<div class="launch-arrow">
-→
-</div>
+<div class="launch-arrow">→</div>
 
 </button>
 
@@ -2515,9 +2153,7 @@ onclick="openSection('database')">
 
 <div>
 
-<div class="launch-icon">
-🧪
-</div>
+<div class="launch-icon">🧪</div>
 
 <h3>
 Агрономічна база
@@ -2532,9 +2168,7 @@ onclick="openSection('database')">
 
 </div>
 
-<div class="launch-arrow">
-→
-</div>
+<div class="launch-arrow">→</div>
 
 </button>
 
@@ -2546,9 +2180,7 @@ onclick="openSection('knowledge')">
 
 <div>
 
-<div class="launch-icon">
-📊
-</div>
+<div class="launch-icon">📊</div>
 
 <h3>
 Таблиці потреб
@@ -2565,9 +2197,7 @@ K₂O,
 
 </div>
 
-<div class="launch-arrow">
-→
-</div>
+<div class="launch-arrow">→</div>
 
 </button>
 
@@ -2579,9 +2209,7 @@ onclick="openSection('research')">
 
 <div>
 
-<div class="launch-icon">
-🔬
-</div>
+<div class="launch-icon">🔬</div>
 
 <h3>
 Польові досліди
@@ -2597,9 +2225,7 @@ onclick="openSection('research')">
 
 </div>
 
-<div class="launch-arrow">
-→
-</div>
+<div class="launch-arrow">→</div>
 
 </button>
 
@@ -2611,9 +2237,7 @@ onclick="openSection('news')">
 
 <div>
 
-<div class="launch-icon">
-📰
-</div>
+<div class="launch-icon">📰</div>
 
 <h3>
 Новини та блог
@@ -2628,9 +2252,7 @@ onclick="openSection('news')">
 
 </div>
 
-<div class="launch-arrow">
-→
-</div>
+<div class="launch-arrow">→</div>
 
 </button>
 
@@ -2642,9 +2264,7 @@ onclick="openSection('contacts')">
 
 <div>
 
-<div class="launch-icon">
-🤝
-</div>
+<div class="launch-icon">🤝</div>
 
 <h3>
 Контакти
@@ -2658,9 +2278,7 @@ onclick="openSection('contacts')">
 
 </div>
 
-<div class="launch-arrow">
-→
-</div>
+<div class="launch-arrow">→</div>
 
 </button>
 
@@ -2710,9 +2328,7 @@ id="quickContacts">
 </small>
 
 <a href="tel:+380680382907">
-
 068 038 29 07
-
 </a>
 
 </div>
@@ -2725,9 +2341,7 @@ TELEGRAM
 </small>
 
 <a>
-
 066 178 05 16
-
 </a>
 
 </div>
@@ -2775,9 +2389,7 @@ KNOWLEDGE • FIELD • TRUTH
 
 
 
-<!-- =====================
-MODAL
-===================== -->
+<!-- MODAL -->
 
 <div
 class="modal"
@@ -2794,11 +2406,8 @@ aria-labelledby="modalTitle">
 <div class="modal-head">
 
 <h2 id="modalTitle">
-
 SIVORA
-
 </h2>
-
 
 <button
 class="modal-close"
@@ -2815,20 +2424,15 @@ aria-label="Закрити">
 <div
 class="modal-body"
 id="modalBody">
-
-</div>
-
-
 </div>
 
 </div>
 
+</div>
 
 
-<!-- =====================
-TEMPLATES
-===================== -->
 
+<!-- FARMER -->
 
 <template id="tpl-farmer">
 
@@ -2856,21 +2460,17 @@ TEMPLATES
 <div class="highlight">
 
 <h3>
-
 Фермер не повинен платити
 за помилку,
 якої можна було уникнути.
-
 </h3>
 
 <p>
-
 SIVORA збирає практичні спостереження,
 досліди та агрономічні знання,
 щоб допомагати аналізувати технологію,
 а не просто повторювати
 рекламні рекомендації.
-
 </p>
 
 </div>
@@ -2878,125 +2478,41 @@ SIVORA збирає практичні спостереження,
 
 <div class="grid3">
 
+<div class="card">
+<div class="icon">🌾</div>
+<h3>Технології вирощування</h3>
+<p>Посів, сівозміна, обробіток ґрунту, живлення, захист та строки робіт.</p>
+</div>
 
 <div class="card">
-
-<div class="icon">
-🌾
+<div class="icon">🧪</div>
+<h3>Мінеральне живлення</h3>
+<p>Азот, фосфор, калій, сірка, мікро- та макроелементи.</p>
 </div>
-
-<h3>
-Технології вирощування
-</h3>
-
-<p>
-Посів, сівозміна,
-обробіток ґрунту,
-живлення, захист
-та строки робіт.
-</p>
-
-</div>
-
 
 <div class="card">
-
-<div class="icon">
-🧪
+<div class="icon">🐛</div>
+<h3>Захист рослин</h3>
+<p>Бур'яни, хвороби, шкідники та агрономічний підхід до рішення.</p>
 </div>
-
-<h3>
-Мінеральне живлення
-</h3>
-
-<p>
-Азот, фосфор,
-калій, сірка,
-мікро-
-та макроелементи.
-</p>
-
-</div>
-
 
 <div class="card">
-
-<div class="icon">
-🐛
+<div class="icon">💧</div>
+<h3>Вологозабезпечення</h3>
+<p>Вода у формуванні врожаю, критичні періоди та реакція культур на стрес.</p>
 </div>
-
-<h3>
-Захист рослин
-</h3>
-
-<p>
-Бур'яни,
-хвороби,
-шкідники
-та агрономічний
-підхід до рішення.
-</p>
-
-</div>
-
 
 <div class="card">
-
-<div class="icon">
-💧
+<div class="icon">🌿</div>
+<h3>Морфологія рослин</h3>
+<p>Фази розвитку, будова рослини та симптоми дефіцитів.</p>
 </div>
-
-<h3>
-Вологозабезпечення
-</h3>
-
-<p>
-Вода у формуванні врожаю,
-критичні періоди
-та реакція культур
-на стрес.
-</p>
-
-</div>
-
 
 <div class="card">
-
-<div class="icon">
-🌿
+<div class="icon">📊</div>
+<h3>Аналіз результатів</h3>
+<p>Порівняння технологій, варіантів досліду та фактичної врожайності.</p>
 </div>
-
-<h3>
-Морфологія рослин
-</h3>
-
-<p>
-Фази розвитку,
-будова рослини
-та симптоми дефіцитів.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">
-📊
-</div>
-
-<h3>
-Аналіз результатів
-</h3>
-
-<p>
-Порівняння технологій,
-варіантів досліду
-та фактичної врожайності.
-</p>
-
-</div>
-
 
 </div>
 
@@ -3006,66 +2522,56 @@ SIVORA збирає практичні спостереження,
 
 
 
+<!-- SERVICES -->
+
 <template id="tpl-students">
 
 <section>
 
-
 <div class="section-header">
 
 <div class="eyebrow">
-
 ДЛЯ СТУДЕНТІВ • ПРАКТИКА • ДОПОМОГА
-
 </div>
 
 <h2>
-
 Навчання,
 яке виходить
 за межі аудиторії
-
 </h2>
 
 <p>
-
 Практичний досвід,
 пояснення агрономії
 та допомога
 з навчальними роботами.
-
 </p>
 
 </div>
 
 
-
 <div class="student-intro">
 
 
-<img
-src="олег-сівора.jpg"
-alt="Мисюра Олег Віталійович — засновник SIVORA"
-class="student-photo">
+<div class="student-photo-placeholder">
 
-
-<div class="student-copy">
-
-
-<div class="eyebrow">
-
-ЗНАННЯ З РЕАЛЬНОГО ПОЛЯ
+<div class="photo-symbol">
+◎
+</div>
 
 </div>
 
 
-<h3>
+<div class="student-copy">
 
+<div class="eyebrow">
+ЗНАННЯ З РЕАЛЬНОГО ПОЛЯ
+</div>
+
+<h3>
 Не просто виконати роботу —
 допомогти зрозуміти агрономію.
-
 </h3>
-
 
 <p>
 
@@ -3079,15 +2585,12 @@ SIVORA створена,
 в аудиторії:
 
 <strong>
-
 практичне пояснення,
 виробничий досвід
 і розуміння технології.
-
 </strong>
 
 </p>
-
 
 <p>
 
@@ -3103,14 +2606,11 @@ SIVORA створена,
 
 </p>
 
-
 <p>
 
 <strong>
-
 Консультація
 безкоштовна 24/7.
-
 </strong>
 
 Платні послуги —
@@ -3123,7 +2623,6 @@ SIVORA створена,
 
 </p>
 
-
 <button
 class="btn btn-gold"
 onclick="openSection('contacts')">
@@ -3132,227 +2631,75 @@ onclick="openSection('contacts')">
 
 </button>
 
-
 </div>
 
 </div>
-
 
 
 <div class="service-grid">
 
+<div class="service-card">
+<div class="icon">🎓</div>
+<h3>Практика</h3>
+<p>Допомога з організацією та матеріалами виробничої або навчальної практики.</p>
+<div class="price">ВІД 500 ГРН</div>
+</div>
 
 <div class="service-card">
-
-<div class="icon">
-🎓
+<div class="icon">📓</div>
+<h3>Щоденник і звіт</h3>
+<p>Опис робіт, структура, таблиці, додатки та виробничі матеріали.</p>
+<div class="price">ВІД 500 ГРН</div>
 </div>
-
-<h3>
-Практика
-</h3>
-
-<p>
-Допомога з організацією
-та матеріалами
-виробничої або навчальної практики.
-</p>
-
-<div class="price">
-ВІД 500 ГРН
-</div>
-
-</div>
-
 
 <div class="service-card">
-
-<div class="icon">
-📓
+<div class="icon">🧪</div>
+<h3>Лабораторні роботи</h3>
+<p>Методика, розрахунки, аналіз результатів та оформлення.</p>
+<div class="price">ВІД 500 ГРН</div>
 </div>
-
-<h3>
-Щоденник і звіт
-</h3>
-
-<p>
-Опис робіт,
-структура,
-таблиці,
-додатки
-та виробничі матеріали.
-</p>
-
-<div class="price">
-ВІД 500 ГРН
-</div>
-
-</div>
-
 
 <div class="service-card">
-
-<div class="icon">
-🧪
+<div class="icon">📐</div>
+<h3>Практичні роботи</h3>
+<p>Агрономічні задачі, розрахунки та виробничі ситуації.</p>
+<div class="price">ВІД 500 ГРН</div>
 </div>
-
-<h3>
-Лабораторні роботи
-</h3>
-
-<p>
-Методика,
-розрахунки,
-аналіз результатів
-та оформлення.
-</p>
-
-<div class="price">
-ВІД 500 ГРН
-</div>
-
-</div>
-
 
 <div class="service-card">
-
-<div class="icon">
-📐
+<div class="icon">📊</div>
+<h3>Курсові проєкти</h3>
+<p>Структура, практична частина, розрахунки та оформлення.</p>
+<div class="price">ВІД 500 ГРН</div>
 </div>
-
-<h3>
-Практичні роботи
-</h3>
-
-<p>
-Агрономічні задачі,
-розрахунки
-та виробничі ситуації.
-</p>
-
-<div class="price">
-ВІД 500 ГРН
-</div>
-
-</div>
-
 
 <div class="service-card">
-
-<div class="icon">
-📊
+<div class="icon">🌾</div>
+<h3>Технології вирощування</h3>
+<p>Індивідуальний матеріал від сівозміни й живлення до захисту та збирання.</p>
+<div class="price">ВІД 500 ГРН</div>
 </div>
-
-<h3>
-Курсові проєкти
-</h3>
-
-<p>
-Структура,
-практична частина,
-розрахунки
-та оформлення.
-</p>
-
-<div class="price">
-ВІД 500 ГРН
-</div>
-
-</div>
-
 
 <div class="service-card">
-
-<div class="icon">
-🌾
+<div class="icon">📚</div>
+<h3>Реферати</h3>
+<p>Структурування теми, агрономічний зміст та висновки.</p>
+<div class="price">ВІД 500 ГРН</div>
 </div>
-
-<h3>
-Технології вирощування
-</h3>
-
-<p>
-Індивідуальний матеріал
-від сівозміни й живлення
-до захисту та збирання.
-</p>
-
-<div class="price">
-ВІД 500 ГРН
-</div>
-
-</div>
-
 
 <div class="service-card">
-
-<div class="icon">
-📚
+<div class="icon">🖥️</div>
+<h3>Презентації</h3>
+<p>Логічна структура, зміст та зрозуміла візуальна подача.</p>
+<div class="price">ВІД 500 ГРН</div>
 </div>
-
-<h3>
-Реферати
-</h3>
-
-<p>
-Структурування теми,
-агрономічний зміст
-та висновки.
-</p>
-
-<div class="price">
-ВІД 500 ГРН
-</div>
-
-</div>
-
 
 <div class="service-card">
-
-<div class="icon">
-🖥️
+<div class="icon">💬</div>
+<h3>Консультація</h3>
+<p>Розбір агрономічних питань для фермера та студента.</p>
+<div class="price">БЕЗКОШТОВНО 24/7</div>
 </div>
-
-<h3>
-Презентації
-</h3>
-
-<p>
-Логічна структура,
-зміст
-та зрозуміла
-візуальна подача.
-</p>
-
-<div class="price">
-ВІД 500 ГРН
-</div>
-
-</div>
-
-
-<div class="service-card">
-
-<div class="icon">
-💬
-</div>
-
-<h3>
-Консультація
-</h3>
-
-<p>
-Розбір агрономічних питань
-для фермера
-та студента.
-</p>
-
-<div class="price">
-БЕЗКОШТОВНО 24/7
-</div>
-
-</div>
-
 
 </div>
 
@@ -3365,12 +2712,13 @@ onclick="openSection('contacts')">
 
 </div>
 
-
 </section>
 
 </template>
 
 
+
+<!-- CULTURES -->
 
 <template id="tpl-cultures">
 
@@ -3395,7 +2743,6 @@ onclick="openSection('contacts')">
 
 
 <div class="culture-grid">
-
 
 <div class="culture">
 <span>🌾</span>
@@ -3445,7 +2792,6 @@ onclick="openSection('contacts')">
 <h3>Ярий ячмінь</h3>
 </div>
 
-
 </div>
 
 </section>
@@ -3453,6 +2799,8 @@ onclick="openSection('contacts')">
 </template>
 
 
+
+<!-- DATABASE -->
 
 <template id="tpl-database">
 
@@ -3491,37 +2839,14 @@ SIVORA AGRONOMY DATABASE
 id="cropSelect"
 onchange="changeCrop()">
 
-<option value="wheat">
-Озима пшениця
-</option>
-
-<option value="corn">
-Кукурудза
-</option>
-
-<option value="sunflower">
-Соняшник
-</option>
-
-<option value="soybean">
-Соя
-</option>
-
-<option value="rapeseed">
-Ріпак
-</option>
-
-<option value="pea">
-Горох
-</option>
-
-<option value="beet">
-Цукрові буряки
-</option>
-
-<option value="barley">
-Ярий ячмінь
-</option>
+<option value="wheat">Озима пшениця</option>
+<option value="corn">Кукурудза</option>
+<option value="sunflower">Соняшник</option>
+<option value="soybean">Соя</option>
+<option value="rapeseed">Ріпак</option>
+<option value="pea">Горох</option>
+<option value="beet">Цукрові буряки</option>
+<option value="barley">Ярий ячмінь</option>
 
 </select>
 
@@ -3529,139 +2854,77 @@ onchange="changeCrop()">
 
 
 <div class="status">
-
 SIVORA • FIELD KNOWLEDGE
-
 </div>
 
 </div>
-
 
 
 <div class="crop-profile">
 
-
 <div class="crop-header">
 
 <div>
-
-<small>
-КУЛЬТУРА
-</small>
-
-<h3 id="cropName">
-Озима пшениця
-</h3>
-
+<small>КУЛЬТУРА</small>
+<h3 id="cropName">Озима пшениця</h3>
 </div>
-
 
 <div
 class="crop-icon"
 id="cropSymbol">
-
 🌾
-
 </div>
 
 </div>
-
 
 
 <div class="nutrient-grid">
 
-
 <div class="nutrient">
-
-<span>
-АЗОТ
-</span>
-
-<strong>
-N
-</strong>
-
+<span>АЗОТ</span>
+<strong>N</strong>
 <p id="nitrogenText">
-
 Формування листкової маси,
 кущення
 та потенціалу врожаю.
-
 </p>
-
 </div>
 
-
 <div class="nutrient">
-
-<span>
-ФОСФОР
-</span>
-
-<strong>
-P₂O₅
-</strong>
-
+<span>ФОСФОР</span>
+<strong>P₂O₅</strong>
 <p id="phosphorusText">
-
 Коренева система,
 енергетичний обмін
 та ранній розвиток.
-
 </p>
-
 </div>
 
-
 <div class="nutrient">
-
-<span>
-КАЛІЙ
-</span>
-
-<strong>
-K₂O
-</strong>
-
+<span>КАЛІЙ</span>
+<strong>K₂O</strong>
 <p id="potassiumText">
-
 Водний режим
 і стійкість
 до стресів.
-
 </p>
-
 </div>
-
 
 <div class="nutrient">
-
-<span>
-МІКРО / МАКРО
-</span>
-
+<span>МІКРО / МАКРО</span>
 <strong id="micro">
-
 S • Mg • Zn • Mn • Cu
-
 </strong>
-
 <p id="microText">
-
 Залежно від ґрунту
 та стану рослини.
-
 </p>
-
 </div>
 
-
 </div>
-
 
 
 <div class="info-grid">
-
 
 <div class="info">
 
@@ -3670,31 +2933,14 @@ S • Mg • Zn • Mn • Cu
 </h4>
 
 <ul id="phases">
-
-<li>
-Кущення
-</li>
-
-<li>
-Вихід у трубку
-</li>
-
-<li>
-Прапорцевий листок
-</li>
-
-<li>
-Колосіння
-</li>
-
-<li>
-Налив зерна
-</li>
-
+<li>Кущення</li>
+<li>Вихід у трубку</li>
+<li>Прапорцевий листок</li>
+<li>Колосіння</li>
+<li>Налив зерна</li>
 </ul>
 
 </div>
-
 
 
 <div class="info">
@@ -3704,31 +2950,14 @@ S • Mg • Zn • Mn • Cu
 </h4>
 
 <ul id="risks">
-
-<li>
-Недостатнє кущення
-</li>
-
-<li>
-Дефіцит азоту та сірки
-</li>
-
-<li>
-Хвороби
-</li>
-
-<li>
-Водний стрес
-</li>
-
-<li>
-Зимові пошкодження
-</li>
-
+<li>Недостатнє кущення</li>
+<li>Дефіцит азоту та сірки</li>
+<li>Хвороби</li>
+<li>Водний стрес</li>
+<li>Зимові пошкодження</li>
 </ul>
 
 </div>
-
 
 
 <div class="info">
@@ -3749,11 +2978,9 @@ S • Mg • Zn • Mn • Cu
 
 </div>
 
-
 </div>
 
 </div>
-
 
 
 <div class="disclaimer">
@@ -3773,30 +3000,26 @@ S • Mg • Zn • Mn • Cu
 
 </div>
 
-
 </section>
 
 </template>
 
 
 
+<!-- KNOWLEDGE -->
+
 <template id="tpl-knowledge">
 
 <section>
 
-
 <div class="section-header">
 
 <div class="eyebrow">
-
 SIVORA KNOWLEDGE BASE
-
 </div>
 
 <h2>
-
 Вода та елементи живлення
-
 </h2>
 
 <p>
@@ -3812,22 +3035,17 @@ SIVORA KNOWLEDGE BASE
 </div>
 
 
-
 <div class="table-card">
 
 <div class="table-title">
 
 <h3>
-
 💧 Потреба у воді
 на формування 1 т урожаю
-
 </h3>
 
 <p>
-
 Орієнтовні діапазони.
-
 </p>
 
 </div>
@@ -3840,19 +3058,9 @@ SIVORA KNOWLEDGE BASE
 <thead>
 
 <tr>
-
-<th>
-Культура
-</th>
-
-<th>
-м³ води / т
-</th>
-
-<th>
-Критичний період
-</th>
-
+<th>Культура</th>
+<th>м³ води / т</th>
+<th>Критичний період</th>
 </tr>
 
 </thead>
@@ -3917,17 +3125,14 @@ SIVORA KNOWLEDGE BASE
 </div>
 
 
-
 <div class="table-card">
 
 <div class="table-title">
 
 <h3>
-
 🌱 Орієнтовна потреба
 в N, P₂O₅ та K₂O
 на 1 т урожаю
-
 </h3>
 
 <p>
@@ -3948,19 +3153,12 @@ SIVORA KNOWLEDGE BASE
 <thead>
 
 <tr>
-
 <th>Культура</th>
-
 <th>N кг/т</th>
-
 <th>P₂O₅ кг/т</th>
-
 <th>K₂O кг/т</th>
-
 <th>Макро</th>
-
 <th>Мікро</th>
-
 </tr>
 
 </thead>
@@ -4049,13 +3247,10 @@ SIVORA KNOWLEDGE BASE
 </div>
 
 
-
 <div class="disclaimer">
 
 <strong>
-
 Примітка SIVORA.
-
 </strong>
 
 Для бобових
@@ -4074,33 +3269,25 @@ SIVORA KNOWLEDGE BASE
 </div>
 
 
-
 <div
 class="section-header"
 style="margin-top:36px">
 
 <div class="eyebrow">
-
 ОСНОВИ МІНЕРАЛЬНОГО ЖИВЛЕННЯ
-
 </div>
 
 <h2>
-
 Макро- та мікроелементи
-
 </h2>
 
 <p>
-
 Коротка база
 про роль основних елементів
 у житті рослини.
-
 </p>
 
 </div>
-
 
 
 <div class="element-grid">
@@ -4179,216 +3366,95 @@ style="margin-top:36px">
 
 </div>
 
-
 </section>
 
 </template>
 
 
+
+<!-- RESEARCH -->
 
 <template id="tpl-research">
 
 <section>
 
-
 <div class="section-header">
 
 <div class="eyebrow">
-
 SIVORA FIELD RESEARCH
-
 </div>
 
 <h2>
-
 Чесні польові досліди
-
 </h2>
 
 <p>
-
 Результат має починатися
 не з реклами,
 а з правильно поставленого досліду,
 спостереження та аналізу.
-
 </p>
 
 </div>
-
 
 
 <div class="research-grid">
 
+<div class="research-card">
+<div class="research-image">🌱</div>
+<div class="research-content">
+<div class="tag">ГУСТОТА ПОСІВУ</div>
+<h3>Вплив густоти</h3>
+<p>Порівняння різних густот та їх впливу на розвиток і врожайність.</p>
+</div>
+</div>
 
 <div class="research-card">
-
-<div class="research-image">
-🌱
-</div>
-
+<div class="research-image">🧪</div>
 <div class="research-content">
-
-<div class="tag">
-ГУСТОТА ПОСІВУ
+<div class="tag">ЖИВЛЕННЯ</div>
+<h3>Системи удобрення</h3>
+<p>Порівняння продуктів, норм внесення та реакції рослин.</p>
 </div>
-
-<h3>
-Вплив густоти
-</h3>
-
-<p>
-Порівняння різних густот
-та їх впливу
-на розвиток
-і врожайність.
-</p>
-
 </div>
-
-</div>
-
 
 <div class="research-card">
-
-<div class="research-image">
-🧪
-</div>
-
+<div class="research-image">🔬</div>
 <div class="research-content">
-
-<div class="tag">
-ЖИВЛЕННЯ
+<div class="tag">ЗАХИСТ</div>
+<h3>Засоби захисту</h3>
+<p>Гербіциди, фунгіциди та інсектициди у різні фази розвитку.</p>
 </div>
-
-<h3>
-Системи удобрення
-</h3>
-
-<p>
-Порівняння продуктів,
-норм внесення
-та реакції рослин.
-</p>
-
 </div>
-
-</div>
-
 
 <div class="research-card">
-
-<div class="research-image">
-🔬
-</div>
-
+<div class="research-image">🌾</div>
 <div class="research-content">
-
-<div class="tag">
-ЗАХИСТ
+<div class="tag">ГІБРИДИ / СОРТИ</div>
+<h3>Порівняння генетики</h3>
+<p>Реальний розвиток, стійкість та кінцева врожайність.</p>
 </div>
-
-<h3>
-Засоби захисту
-</h3>
-
-<p>
-Гербіциди,
-фунгіциди
-та інсектициди
-у різні фази розвитку.
-</p>
-
 </div>
-
-</div>
-
 
 <div class="research-card">
-
-<div class="research-image">
-🌾
-</div>
-
+<div class="research-image">🧬</div>
 <div class="research-content">
-
-<div class="tag">
-ГІБРИДИ / СОРТИ
+<div class="tag">МІКРОЕЛЕМЕНТИ</div>
+<h3>Мікро- та макроживлення</h3>
+<p>Реакція рослин на різні елементи, норми та строки внесення.</p>
 </div>
-
-<h3>
-Порівняння генетики
-</h3>
-
-<p>
-Реальний розвиток,
-стійкість
-та кінцева врожайність.
-</p>
-
 </div>
-
-</div>
-
 
 <div class="research-card">
-
-<div class="research-image">
-🧬
-</div>
-
+<div class="research-image">📊</div>
 <div class="research-content">
-
-<div class="tag">
-МІКРОЕЛЕМЕНТИ
+<div class="tag">SIVORA DATABASE</div>
+<h3>База реальних результатів</h3>
+<p>Фото, умови поля, технологія і фактична врожайність.</p>
 </div>
-
-<h3>
-Мікро- та макроживлення
-</h3>
-
-<p>
-Реакція рослин
-на різні елементи,
-норми
-та строки внесення.
-</p>
-
 </div>
 
 </div>
-
-
-<div class="research-card">
-
-<div class="research-image">
-📊
-</div>
-
-<div class="research-content">
-
-<div class="tag">
-SIVORA DATABASE
-</div>
-
-<h3>
-База реальних результатів
-</h3>
-
-<p>
-Фото,
-умови поля,
-технологія
-і фактична врожайність.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
 
 </section>
 
@@ -4396,23 +3462,20 @@ SIVORA DATABASE
 
 
 
+<!-- NEWS -->
+
 <template id="tpl-news">
 
 <section>
 
-
 <div class="section-header">
 
 <div class="eyebrow">
-
 SIVORA NEWS
-
 </div>
 
 <h2>
-
 Новини та польові записи
-
 </h2>
 
 <p>
@@ -4432,95 +3495,36 @@ SIVORA NEWS
 </div>
 
 
-
 <div class="research-grid">
 
+<div class="research-card">
+<div class="research-image">📸</div>
+<div class="research-content">
+<div class="tag">ПОЛЕ</div>
+<h3>Новий запис</h3>
+<p>Фото з досліду, короткий опис умов і головний висновок.</p>
+</div>
+</div>
 
 <div class="research-card">
-
-<div class="research-image">
-📸
-</div>
-
+<div class="research-image">🌱</div>
 <div class="research-content">
-
-<div class="tag">
-ПОЛЕ
+<div class="tag">СПОСТЕРЕЖЕННЯ</div>
+<h3>Розвиток культури</h3>
+<p>Фіксуємо фази, погодні умови, живлення та реакцію рослини.</p>
 </div>
-
-<h3>
-Новий запис
-</h3>
-
-<p>
-Фото з досліду,
-короткий опис умов
-і головний висновок.
-</p>
-
 </div>
-
-</div>
-
 
 <div class="research-card">
-
-<div class="research-image">
-🌱
-</div>
-
+<div class="research-image">📈</div>
 <div class="research-content">
-
-<div class="tag">
-СПОСТЕРЕЖЕННЯ
+<div class="tag">РЕЗУЛЬТАТ</div>
+<h3>Після збирання</h3>
+<p>Фактична врожайність, якість та висновки по технології.</p>
 </div>
-
-<h3>
-Розвиток культури
-</h3>
-
-<p>
-Фіксуємо фази,
-погодні умови,
-живлення
-та реакцію рослини.
-</p>
-
 </div>
 
 </div>
-
-
-<div class="research-card">
-
-<div class="research-image">
-📈
-</div>
-
-<div class="research-content">
-
-<div class="tag">
-РЕЗУЛЬТАТ
-</div>
-
-<h3>
-Після збирання
-</h3>
-
-<p>
-Фактична врожайність,
-якість
-та висновки
-по технології.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
 
 </section>
 
@@ -4528,48 +3532,36 @@ SIVORA NEWS
 
 
 
+<!-- CONTACTS -->
+
 <template id="tpl-contacts">
 
 <section>
 
-
 <div class="contact-box">
 
-
 <div class="eyebrow">
-
 ЗВ'ЯЗОК ІЗ SIVORA
-
 </div>
 
-
 <h2>
-
 Є питання?
 Пишіть або телефонуйте.
-
 </h2>
 
-
 <p>
-
 Консультація
 для фермера та студента
 безкоштовна 24/7.
-
 </p>
 
 
 <div class="phone">
-
 068 038 29 07
-
 </div>
 
 
-
 <div class="contact-links">
-
 
 <a
 href="tel:+380680382907"
@@ -4598,13 +3590,10 @@ class="contact-link">
 
 </a>
 
-
 </div>
 
 
-
 <div class="contact-info">
-
 
 <div>
 
@@ -4627,7 +3616,6 @@ Telegram
 
 </div>
 
-
 </div>
 
 
@@ -4638,9 +3626,7 @@ Telegram
 
 </div>
 
-
 </div>
-
 
 </section>
 
@@ -4677,7 +3663,6 @@ document
 });
 
 
-
 const modal=
 document.getElementById("sectionModal");
 
@@ -4686,7 +3671,6 @@ document.getElementById("modalBody");
 
 const modalTitle=
 document.getElementById("modalTitle");
-
 
 
 const sectionTitles={
@@ -4708,7 +3692,6 @@ news:"Новини та блог",
 contacts:"Контакти"
 
 };
-
 
 
 function openSection(name){
@@ -4752,7 +3735,6 @@ changeCrop();
 }
 
 
-
 function closeModal(){
 
 modal
@@ -4773,7 +3755,6 @@ document
 }
 
 
-
 modal.addEventListener(
 "click",
 e=>{
@@ -4788,7 +3769,6 @@ closeModal();
 );
 
 
-
 document.addEventListener(
 "keydown",
 e=>{
@@ -4801,7 +3781,6 @@ closeModal();
 
 }
 );
-
 
 
 const cropData={
@@ -4850,7 +3829,6 @@ approach:
 },
 
 
-
 corn:{
 
 name:"Кукурудза",
@@ -4892,7 +3870,6 @@ approach:
 "Контролювати стартовий розвиток, густоту, кореневу систему, живлення та водний режим."
 
 },
-
 
 
 sunflower:{
@@ -4938,7 +3915,6 @@ approach:
 },
 
 
-
 soybean:{
 
 name:"Соя",
@@ -4980,7 +3956,6 @@ approach:
 "Оцінювати стан бульбочок, розвиток кореневої системи, густоту та забезпечення вологою."
 
 },
-
 
 
 rapeseed:{
@@ -5026,7 +4001,6 @@ approach:
 },
 
 
-
 pea:{
 
 name:"Горох",
@@ -5068,7 +4042,6 @@ approach:
 "Контролювати густоту, розвиток кореневої системи та фітосанітарний стан."
 
 },
-
 
 
 beet:{
@@ -5114,7 +4087,6 @@ approach:
 },
 
 
-
 barley:{
 
 name:"Ярий ячмінь",
@@ -5158,7 +4130,6 @@ approach:
 }
 
 };
-
 
 
 function changeCrop(){
@@ -5242,7 +4213,6 @@ document
 data.approach;
 
 }
-
 
 </script>
 
